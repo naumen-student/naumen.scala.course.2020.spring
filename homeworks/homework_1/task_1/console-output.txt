@@ -1,0 +1,17 @@
+C:\Users\Romutchio>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 10.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Roman"
+name: String = Roman
+
+scala> println(s"Hello Scala! This is ${name}")
+Hello Scala! This is Roman
+
+scala> println(s"Hola Scala! This is ${name}")
+Hola Scala! This is Roman
+
+scala> println(s"Guten tag Scala! This is ${name.reverse}")
+Guten tag Scala! This is namoR
+
+scala>
