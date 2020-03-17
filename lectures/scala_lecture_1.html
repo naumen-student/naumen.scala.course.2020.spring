@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Название</title>
+
+    <meta name="description" content="Название">
+    <meta name="author" content="автор">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <link rel="stylesheet" href="css/hljs/vs.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="footer">
+            <span class="corp-name"><b>NAUMEN </b></span>Соколов Артём
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>Вводная лекция</h1>
+                <h1>Что такое Scala?</h1>
+                <div style="position: relative; right: 0;">Соколов Артём</div>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Про курс</h1>
+                <ul>
+                    <li>Расскажем про Scala</li>
+                    <li>Научим программировать</li>
+                    <li>Познакомим с современными концепциями и практиками</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Структура курса</h1>
+                <p>9-12 занятий с 13 марта по 29 мая</p>
+                <ul>
+                    <li>9 лекций (+ дз)</li>
+                    <li>0-3 практики (зависит от праздников и расписания)</li>
+                    <li>Факультативно: проектная работа</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Структура курса</h1>
+                <ul>
+                    <li>Вводная лекция</li>
+                    <li>Базовые конструкции</li>
+                    <li>Типы</li>
+                    <li>ООП в Scala</li>
+                    <li>Параметрический полиморфизм</li>
+                    <li>Библиотека коллекций</li>
+                    <li>Введение в ФП</li>
+                    <li>Тайп классы</li>
+                    <li>Введение в монады</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Домашние задания</h1>
+                <ul>
+                    <li>после каждой лекции набор упражнений и задачек</li>
+                    <li>для большинства из них надо писать тесты</li>
+                    <li>срок сдачи - неделя после анонса ДЗ в чате</li>
+                    <li>формат сдачи - удаленно (github)</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Практика</h1>
+                <ul>
+                    <li>консультации по домашкам</li>
+                    <li>любые вопросы по разработке на Scala</li>
+                    <li>воркшоп</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Зачет (3 з.е.)</h1>
+                <p>Условия:</p>
+                <ul>
+                    <li>посещаемость (посетить все лекции)</li>
+                    <li>домашние задания (в полном объеме и вовремя)</li>
+                </ul>
+                <br>
+                <br>
+                <p>Поблажки (до 3х отсутствующих лекций или дз) тем кто:</p>
+                <ul>
+                    <li>сделает домашки круто</li>
+                    <li>будет активно и успешно заниматься проектной работой</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Проектная работа</h1>
+                <ul>
+                    <li>для самых продвинутых и интересующихся</li>
+                    <li>даются разработческие задачи в полноценном Scala проекте</li>
+                    <li>ревью кода и консультации 1 раз в неделю в стенах Naumen вечером (~19:00)</li>
+                    <li>начнется через 2 недели</li>
+                    <li>интенсивность и успешность - зависит от вас</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Контакты</h1>
+                <ul>
+                    <li>https://t.me/naumen_scala_spring20</li>
+                    <li>https://vk.com/naumenscala20</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h2>Что может дать курс?</h2>
+                <h2>...</h2>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Что дает курс</h1>
+                <ul>
+                    <li>Если вы будущий Scala разработчик
+                        <ul>
+                            <li>приобретёте практические навыки</li>
+                            <li>лучшие трудоустроятся в Naumen сразу</li>
+                            <li>остальные смогут потом</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Что дает курс</h1>
+                <ul>
+                    <li>Если вы НЕ Scala разработчик
+                        <ul>
+                            <li>освоите современные подходы и фичи языков</li>
+                            <li>опыт от практикующих разработчиков</li>
+                            <li>пункт "Scala" в резюме</li>
+                            <li>рекомендации при трудоустройстве</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <p>по орг вопросам - всё обсудили</p>
+                <p class="fragment">наконецто переходим к Scala...</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>История Scala</h1>
+                <p>Создатель языка - Мартин Одерски (Martin Odersky)</p>
+                <ul>
+                    <li>ученый-практик из швейцарии</li>
+                    <li>всю жизнь занимается языками, компиляторами, проблемами вычислимости и корректности программ</li>
+                    <li>Scala далеко не единственный и не первый</li>
+                    <li>Разработал большую часть javac и Java Generics</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>История Scala</h1>
+                <h3>Временные вехи</h3>
+                <ul>
+                    <li>старт разработки - 2001</li>
+                    <li>первый публичный релиз - январь 2004</li>
+                    <li>Scala 2.0 - март 2006</li>
+                    <li>Twitter - апреле 2009</li>
+                    <li>версия 2.8.0 - июль 2010 (коллекции, именованные и параметры по умолчанию)</li>
+                    <li>версия 2.10.0 - январь 2013 (много фич которые сейчас стали основными)</li>
+                    <li>расцвет экосистемы и рост популярности языка</li>
+                    <li>Scala 3 - coming soon (2-3 года)</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h2>Что вы слышали про Scala?</h2>
+                <h2>...</h2>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>С одной стороны...</h1>
+                <li>Scala - это обычный современный язык программирования высокого уровня работающий на ВМ/платформе</li>
+                <li>Большинство того что возможно и что успешно делается на этих языках - можно делать и на Scala</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>С другой стороны...</h1>
+                <p>Есть свои особенности.</p>
+                <br>
+                <p>Проанализируем их ответив на вопросы:</p>
+                <li>Чем принципиально разработка на Scala отличается?</li>
+                <li>Почему кто-то может захотеть выбрать именно его для тех или иных задач?</li>
+                <li>Чем она может быть выгодна?</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <li>JVM и Java interoperability</li>
+                <li>OOP + FP</li>
+                <li>Продвинутые языковые фичи</li>
+                <li>Экосистема</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>JVM и Java interoperability</h3>
+                <p>Почему это может быть важно ?</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>JVM и Java interoperability</h3>
+                <p>JVM - высококачественная (производительность) и популярная платформа (компетенции + инструментарий)</p>
+                <p>Но запускаться на JVM мало (JRuby, Jython, Clojure, Ceylon, etc)</p>
+                <p>Interop - путь к библиотекам и экосистеме</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>Java interoperability</h3>
+                <li>Пример из практики почему это важно на примере компании СКБ Контур</li>
+                <li>пишут в основном на C#</li>
+                <li>хотят дальше всегда писать на C#</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>Java interoperability</h3>
+                <p>Кейс №1 - клиент Кафка</p>
+                <ul>
+                <li>Много сервисов на C#</li>
+                <li>Всем надо отправлять логи в Kafka (вспомогательное ПО со своим протоколом)</li>
+                <li>C# клиент Kafka плохой:
+                    <ul>
+                        <li>обертка над C</li>
+                        <li>не все фичи поддерживаются</li>
+                        <li>имеет баги, может течь память</li>
+                    </ul>
+                </li>
+                <li>В итоге написали отдельный проксирующий сервис на</li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+                <section>
+                    <h1>Особенности языка</h1>
+                    <h3>Java interoperability</h3>
+                    <p>Кейс №2 - java-библиотеки Apache FOP (xml -> pdf), BouncyCastle (криптография, ЭЦП)</p>
+                    <ul>
+                        <li>Та же история - хорошие библиотеки под Java</li>
+                        <li>Под C# не очень хорошо портированы</li>
+                        <li>Проще написать на Java</li>
+                    </ul>
+                </section>
+            </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>JVM и Java interoperability</h3>
+                <p>В Scala благодаря интеропу таких проблем нет - бери любую Java библиотеку и используй в своем приложении</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>OOP+FP</h3>
+                <li>Почему это может быть важно ?</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>OOP+FP</h3>
+                <li>можно на чистом ООП (как в Java, C#, Python, Typescript и т.д.)</li>
+                <li>доминирующая парадигма - множеству людей удобно писать в этом стиле</li>
+                <li>более продвинутый ООП</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>OOP+FP</h3>
+                <li>можно на удобном и чистом (почти) ФП</li>
+                <li>более продвинутая парадигма</li>
+                <li>можно плавно переходить от ООП к ФП</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>Продвинутые языковые фичи</h3>
+                <li>текущие языки многое берут из Scala спустя 3-5 лет</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>Продвинутые языковые фичи</h3>
+                <h5>Уже реализованное в других языках</h5>
+                <li>лямбды и функции/методы как объекты первого класса</li> 
+                <li>работа с коллекциями в стиле filter/map/reduce</li> 
+                <li>ленивость вычислений и Streams</li> 
+                <li>extension methods</li> 
+                <li>безопасное множественное наследование</li> 
+                <li>локальный вывод типов</li> 
+                <li>Optional</li> 
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>Продвинутые языковые фичи</h3>
+                <h5>Прямо сейчас в разработке</h5>
+                <li>Pattern matching <p>https://openjdk.java.net/jeps/305</p><p>https://openjdk.java.net/jeps/8213076</p></li> 
+                <li>Algebraic Data Types <p>https://openjdk.java.net/jeps/359</p><p>https://openjdk.java.net/jeps/360)</p></li> 
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>Продвинутые языковые фичи</h3>
+                <h5>Предположительно в будущем</h5>
+                <li>Type classes</li> 
+                <li>и др.</li> 
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>Продвинутые языковые фичи</h3>
+                <li>Scala - новейшие разработки</li> 
+                <li>Другие языки - слегка отстают</li> 
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>Экосистема Scala</h3>
+                <li>Ряд решений написаны на Scala</li> 
+                <li>Крайне эффективны в своих нишах</li> 
+                <li>Определяют стек</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Особенности языка</h1>
+                <h3>Экосистема Scala</h3>
+                <li>Apache Spark - фреймворк для продвинутого map/reduce, используется для бигдаты и ML</li> 
+                <li>Akka - эффективная и очень зрелая реализация модели акторов</li> 
+                <li>FP библиотеки (многопоточность, параллелизм, асинхронность)</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h3>С особенностями всё</h3>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Адоптеры Scala</h1>
+                <h3>Основной стек:</h3>
+                <li>Twitter</li> 
+                <li>LinkedIn</li> 
+                <li>Тинькофф</li> 
+                <li>и др.</li> 
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Адоптеры Scala</h1>
+                <h3>Используют:</h3>
+                <li>Apple</li> 
+                <li>Airbnb</li> 
+                <li>Coursera</li> 
+                <li>Делибомиль</li> 
+                <li>Сбербанк </li> 
+                <li>и многие др.</li> 
+            </section>
+        </div>
+        
+        <div class="slides">
+            <section>
+                <h1>Адоптеры Scala</h1>
+                <p>почему это важно?</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Адоптеры</h1>
+                <h3>Важно потому что</h3>
+                <li>Гарантия стабильности языка</li> 
+                <li>Развитие экосистемы (вкладываются непосредственно в язык/компилятор, либо открывают свои наработки, либо коммитят в другой open source)</li> 
+                <li>Вакансии для разработчиков</li> 
+                <li>Источник компетенций</li> 
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Инструменты</h1>
+                <li>REPL - <a>https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.msi</a></li> 
+                <li>Ammonite REPL (only Linux/Mac) - <a>https://ammonite.io/#Ammonite-REPL</a></li> 
+                <li>Scastie - online worksheet and code share - <a>https://scastie.scala-lang.org/</a></li> 
+                <li>IDE - IntelliJ Idea (with Scala plugin)</li> 
+                <li>VS Code (with Metals plugin)</li> 
+                <li>Worksheet (in Scastie or Idea)</li> 
+                <li>cheatsheet <a>https://alvinalexander.com/downloads/scala/Scala-Cheat-Sheet-devdaily.pdf</a></li> 
+            </section>
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: false,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                {
+                    src: 'lib/js/classList.js', condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/markdown/marked.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/markdown/markdown.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                        return !!document.querySelector('pre code');
+                    }, callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true }
+            ]
+        });
+
+        window.addEventListener("mousedown", handleClick, false);
+        window.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+
+        function handleClick(e) {
+            e.preventDefault();
+            if (e.button === 0) Reveal.next();
+            if (e.button === 2) Reveal.prev();
+        }
+    </script>
+
+</body>
+
+</html>
