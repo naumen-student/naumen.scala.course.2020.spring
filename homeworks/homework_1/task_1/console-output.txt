@@ -11,6 +11,15 @@ Hello Scala! This is Roman
 scala> println(s"Hola Scala! This is ${name}")
 Hola Scala! This is Roman
 
+scala> println(s"Guten tag Scala! This is ${name}")
+Hola Scala! This is Roman
+
+scala> println(s"Hello Scala! This is ${name}")
+Hello Scala! This is namoR
+
+scala> println(s"Hola Scala! This is ${name}")
+Hola Scala! This is namoR
+
 scala> println(s"Guten tag Scala! This is ${name.reverse}")
 Guten tag Scala! This is namoR
 
