@@ -1,0 +1,35 @@
+Microsoft Windows [Version 10.0.18362.720]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2019. Все права защищены.
+
+C:\Users\smart>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) Client VM, Java 1.8.0_241).
+Type in expressions for evaluation. Or try :help.
+
+scala> def hello(greet: String, name: String) : Unit = println(s"${greet} Scala! This is ${name}")
+hello: (greet: String, name: String)Unit
+
+scala> hello("Hello", "Andrey")
+Hello Scala! This is Andrey
+
+scala> hello("Hola", "Andrey")
+Hola Scala! This is Andrey
+
+scala> hello("Guten tag", "Andrey")
+Guten tag Scala! This is Andrey
+
+scala> hello("Hello", "Andrey".reverse())
+<console>:13: error: not enough arguments for method apply: (index: Int)Char in class StringOps.
+Unspecified value parameter index.
+       hello("Hello", "Andrey".reverse())
+                                      ^
+
+scala> hello("Hello", "Andrey".reverse)
+Hello Scala! This is yerdnA
+
+scala> hello("Hola", "Andrey".reverse)
+Hola Scala! This is yerdnA
+
+scala> hello("Guten tag", "Andrey".reverse)
+Guten tag Scala! This is yerdnA
+
+scala>
