@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/voytsishevskiy/dev/SbtExampleProject/target/scala-2.13/sbtexampleproject_2.13-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	homework[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/voytsishevskiy/dev/SbtExampleProject/target/scala-2.13/classes/homework[0m
+[0m[[0m[0mdebug[0m] [0m[0m	homework/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/voytsishevskiy/dev/SbtExampleProject/target/scala-2.13/classes/homework/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	homework/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/voytsishevskiy/dev/SbtExampleProject/target/scala-2.13/classes/homework/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	homework/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/voytsishevskiy/dev/SbtExampleProject/target/scala-2.13/classes/homework/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
