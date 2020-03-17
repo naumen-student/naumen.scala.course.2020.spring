@@ -1,0 +1,28 @@
+~/junk/sclsht via 🅒 base 
+➜ ./.ammonite/download/2.0.4              
+Loading...
+Compiling (synthetic)/ammonite/predef/interpBridge.sc
+Compiling (synthetic)/ammonite/predef/replBridge.sc
+Compiling (synthetic)/ammonite/predef/sourceBridge.sc
+Compiling (synthetic)/ammonite/predef/frontEndBridge.sc
+Compiling (synthetic)/ammonite/predef/DefaultPredef.sc
+Welcome to the Ammonite Repl 2.0.4 (Scala 2.13.1 Java 11.0.6)
+@ def greeter(greet : String, body : String, who: String) = println((greet :: body :: who :: Nil).mkString(" ")) 
+defined function greeter
+
+@ val foo = (x : String) => greeter(x, "Scala! This is", "reshke") 
+foo: String => Unit = ammonite.$sess.cmd1$$$Lambda$1426/0x00000008407be040@2321e482
+
+@ val bar = (x : String) => greeter(x, "Scala! This is", "reshke".reverse) 
+bar: String => Unit = ammonite.$sess.cmd2$$$Lambda$1435/0x00000008407c8840@4cc7e3ad
+
+@ ("Hello" :: "Hola" :: "Guten Tag" :: Nil).foreach { foo } 
+Hello Scala! This is reshke
+Hola Scala! This is reshke
+Guten Tag Scala! This is reshke
+
+
+@ ("Hello" :: "Hola" :: "Guten Tag" :: Nil).foreach { bar } 
+Hello Scala! This is ekhser
+Hola Scala! This is ekhser
+Guten Tag Scala! This is ekhser
