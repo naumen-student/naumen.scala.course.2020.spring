@@ -1,0 +1,35 @@
+C:\Users\nomer>scala
+Welcome to Scala 2.13.1 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_241).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name = "Pavel Grachev"
+name: String = Pavel Grachev
+
+scala> var hiWord1 = "Hello"
+hiWord1: String = Hello
+
+scala> val hi = (hiWord: String) => print( hiWord + " Scala! This is " + name )
+hi: String => Unit = $$Lambda$755/356835027@3ccb12d
+
+scala> hi(hiWord1)
+Hello Scala! This is Pavel Grachev
+
+scala> val hiWord2 = "Bonjour"
+hiWord2: String = Bonjour
+
+scala> val hiWord3 = "Guten tag"
+hiWord3: String = Guten tag
+
+scala> hi(hiWord2)
+Bonjour Scala! This is Pavel Grachev
+scala> hi(hiWord3)
+Guten tag Scala! This is Pavel Grachev
+scala> name = name.reverse
+mutated name
+
+scala> hi(hiWord1)
+Hello Scala! This is vehcarG levaP
+scala> hi(hiWord2)
+Bonjour Scala! This is vehcarG levaP
+scala> hi(hiWord3)
+Guten tag Scala! This is vehcarG levaP
