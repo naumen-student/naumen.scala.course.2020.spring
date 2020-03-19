@@ -1,0 +1,24 @@
+C:\Users\gosha>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 9).
+Type in expressions for evaluation. Or try :help.
+
+scala> def myPrinln(greet: String, name: String) = println(s"$greet Scala! This is $name")
+myPrinln: (greet: String, name: String)Unit
+
+scala> myPrinln("Hello", "Georgy")
+Hello Scala! This is Georgy
+
+scala> myPrinln("Holla", "Georgy")
+Holla Scala! This is Georgy
+
+scala> myPrinln("Guten tag", "Georgy")
+Guten tag Scala! This is Georgy
+
+scala> def myPrinln(greet: String, name: String) = println(s"$greet Scala! This is ${name.reverse}"
+)
+myPrinln: (greet: String, name: String)Unit
+
+scala> myPrinln("Guten tag", "Georgy")
+Guten tag Scala! This is ygroeG
+
+scala>
