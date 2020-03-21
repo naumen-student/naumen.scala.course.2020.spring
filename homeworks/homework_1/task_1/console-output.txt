@@ -1,0 +1,85 @@
+C:\Users\Romka>cd Desktop/Scala
+
+C:\Users\Romka\Desktop\Scala>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 12.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = "Hello"
+a: String = Hello
+
+scala> val b = ", Scala! This is "
+b: String = ", Scala! This is "
+
+scala> val c = "Roman Yaschenko"
+c: String = Roman Yaschenko
+
+scala> def Hello(a: String, b: String, c: String) = println(a + b + c)
+Hello: (a: String, b: String, c: String)Unit
+
+scala> Hello(a, b, c)
+Hello, Scala! This is Roman Yaschenko
+
+scala> val a2 = "Hola"
+a2: String = Hola
+
+scala> val a3 = "Guten tag"
+a3: String = Guten tag
+
+scala> Hello(a1, b, c)
+<console>:15: error: not found: value a1
+       Hello(a1, b, c)
+             ^
+
+scala> Hello(a2, b, c)
+Hola, Scala! This is Roman Yaschenko
+
+scala> Hello(a3, b, c)
+Guten tag, Scala! This is Roman Yaschenko
+
+scala> StringBuilder r = new StringBuilder
+<console>:11: error: value r is not a member of object StringBuilder
+       StringBuilder r = new StringBuilder
+                     ^
+<console>:12: error: value r is not a member of object StringBuilder
+       val $ires0 = StringBuilder.r
+                                  ^
+
+scala> val r = new StringBuilder
+r: StringBuilder =
+
+scala> r ++= "Roman Yaschenko"
+res4: r.type = Roman Yaschenko
+
+scala> val r = r.Reverse
+<console>:12: error: recursive value r needs type
+       val r = r.Reverse
+               ^
+
+scala> val r2 = r.Reverse
+<console>:12: error: value Reverse is not a member of StringBuilder
+       val r2 = r.Reverse
+                  ^
+
+scala> val r2 = r.reverse
+r2: StringBuilder = oknehcsaY namoR
+
+scala> Hello(a, b, r2)
+<console>:16: error: type mismatch;
+ found   : StringBuilder
+ required: String
+       Hello(a, b, r2)
+                   ^
+
+scala> val r3 = r2.toString
+r3: String = oknehcsaY namoR
+
+scala> Hello(a, b, r3)
+Hello, Scala! This is oknehcsaY namoR
+
+scala> Hello(a2, b, r3)
+Hola, Scala! This is oknehcsaY namoR
+
+scala> Hello(a3, b, r3)
+Guten tag, Scala! This is oknehcsaY namoR
+
+scala>
