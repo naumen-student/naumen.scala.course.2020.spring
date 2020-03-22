@@ -1,0 +1,5 @@
+[debug] [watch] [sbtexampleproject / Compile / run] Found inputs: D:\IDEA\SbtExampleProject\*.{java,scala},D:\IDEA\SbtExampleProject\src\main\java\**\*.{java,scala},D:\IDEA\SbtExampleProject\src\main\resources\**\*,D:\IDEA\SbtExampleProject\src\main\scala\**\*.{java,scala},D:\IDEA\SbtExampleProject\src\main\scala-2.13\**\*.{java,scala}
+[info] 1. Monitoring source files for sbtexampleproject/run...
+[info]    Press <enter> to interrupt or '?' for more options.
+[debug] [watch] [debug] Received input event: Run().
+[debug] [watch] [debug] Received input event: Run().
