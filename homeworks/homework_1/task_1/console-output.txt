@@ -1,0 +1,103 @@
+volkov@volkov-Lenovo-V310-15ISK:~$ amm
+Loading...
+Welcome to the Ammonite Repl 2.0.4 (Scala 2.13.1 Java 11.0.6)
+@ def hello(s: String): Unit = {
+  println("Hello " + s)
+  } 
+defined function hello
+
+@ hello("Denis Volkov") 
+Hello Denis Volkov
+
+
+@ def hello(s: String): Unit = {
+  println("Hello ${s}")
+  } 
+defined function hello
+
+@ hello("Denis Volkov") 
+Hello ${s}
+
+
+@ def hello(s: String): Unit = {
+  println("Hello " + s)
+  } 
+defined function hello
+
+@ hello("Denis Volkov") 
+Hello Denis Volkov
+
+
+@ def greeting(name: String, hello = "Hello") {
+  println(hello + " Scala! This is " + name)
+  } 
+(console):1: ':' expected but '=' found.
+def greeting(name: String, hello = "Hello") {
+                                 ^
+(console):3: identifier expected but eof found.
+}
+ ^
+
+@ def greeting(name: String, hello: String = "Hello") {
+  println(hello + " Scala! This is " + name)
+  } 
+defined function greeting
+
+@  
+
+@ greeting("Denis") 
+Hello Scala! This is Denis
+
+
+@ greeting("Denis", ) 
+(console):1:17 expected ")"
+greeting("Denis", )
+                ^
+
+@ greeting("Denis", "Guten tag") 
+Guten tag Scala! This is Denis
+
+
+@ greeting("Denis", "Hola") 
+Hola Scala! This is Denis
+
+
+@ greeting("Denis".reverse, "Hola") 
+Hola Scala! This is sineD
+
+
+@ greeting("Denis".reverse, "Guten tag") 
+Guten tag Scala! This is sineD
+
+
+@ greeting("Denis".reverse) 
+Hello Scala! This is sineD
+
+
+@ var greetings: String = "Hello Scala! This is Denis Volkov" 
+greetings: String = "Hello Scala! This is Denis Volkov"
+
+@ println(greetings) 
+Hello Scala! This is Denis Volkov
+
+
+@ var greetings: String = "Guten Tag Scala! This is Denis Volkov" 
+greetings: String = "Guten Tag Scala! This is Denis Volkov"
+
+@  
+
+@ println("Guten Tag Scala! This is Denis Volkov") 
+Guten Tag Scala! This is Denis Volkov
+
+
+@ println("Hola Scala! This is Denis Volkov") 
+Hola Scala! This is Denis Volkov
+
+
+@ println("Hola Scala! This is " + "Denis Volkov".reverse) 
+Hola Scala! This is vokloV sineD
+
+
+@ println("Guten Tag Scala! This is " + "Denis Volkov".reverse) 
+Guten Tag Scala! This is vokloV sineD
+
