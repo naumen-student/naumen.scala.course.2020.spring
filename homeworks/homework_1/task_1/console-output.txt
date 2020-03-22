@@ -1,0 +1,47 @@
+Microsoft Windows [Version 6.3.9600]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2013. Все права защищены.
+
+C:\Users\Pasha\Desktop\Git_scala>scala
+Welcome to Scala 2.12.8 (Java HotSpot(TM) 64-Bit Server VM, Java 11.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> var hello = "Hello"
+hello: String = Hello
+
+scala> val name = "Pavel Kargapolov"
+name: String = Pavel Kargapolov
+
+scala> println(s"${hello} Scala! This is ${name}")
+Hello Scala! This is Pavel Kargapolov
+
+scala> hello = "Hola"
+hello: String = Hola
+
+scala> println(s"${hello} Scala! This is ${name}")
+Hola Scala! This is Pavel Kargapolov
+
+scala> hello = "Guten tag"
+hello: String = Guten tag
+
+scala> println(s"${hello} Scala! This is ${name}")
+Guten tag Scala! This is Pavel Kargapolov
+
+scala> hello = "Hello"
+hello: String = Hello
+
+scala> println(s"${hello} Scala! This is ${name.reverse}")
+Hello Scala! This is volopagraK levaP
+
+scala> hello = "Hola"
+hello: String = Hola
+
+scala> println(s"${hello} Scala! This is ${name.reverse}")
+Hola Scala! This is volopagraK levaP
+
+scala> hello = "Guten tag"
+hello: String = Guten tag
+
+scala> println(s"${hello} Scala! This is ${name.reverse}")
+Guten tag Scala! This is volopagraK levaP
+
+scala>
