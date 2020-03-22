@@ -1,0 +1,11 @@
+homeworks/homework_1/task_3/SbtExampleProject/.idea
+
+homeworks/homework_1/task_3/SbtExampleProject/dist/*
+homeworks/homework_1/task_3/SbtExampleProject/target/
+homeworks/homework_1/task_3/SbtExampleProject/lib_managed/
+homeworks/homework_1/task_3/SbtExampleProject/src_managed/
+homeworks/homework_1/task_3/SbtExampleProject/project/boot/
+homeworks/homework_1/task_3/SbtExampleProject/project/plugins/project/
+homeworks/homework_1/task_3/SbtExampleProject/.history
+homeworks/homework_1/task_3/SbtExampleProject/.cache
+homeworks/homework_1/task_3/SbtExampleProject/.lib/

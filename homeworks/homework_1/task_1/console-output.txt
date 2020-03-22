@@ -1,0 +1,25 @@
+"C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.3\jbr\bin\java.exe" -Djline.terminal=NONE "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.3\lib\idea_rt.jar=62642:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.3\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Timofey\.ivy2\cache\org.scala-lang\scala-compiler\jars\scala-compiler-2.12.10.jar;C:\Users\Timofey\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.12.10.jar;C:\Users\Timofey\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.12.10.jar;C:\Users\Timofey\.IdeaIC2019.3\config\plugins\Scala\lib\runners.jar scala.tools.nsc.MainGenericRunner -usejavacp
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.5).
+Type in expressions for evaluation. Or try :help.
+
+scala> def printGreetings(name: String): Unit = {
+  val names = Array(name, name.reverse)
+  val greetings = Array("Hello", "Hola", "Guten tag")
+
+  for (name <- names) {
+    for (greeting <- greetings) {
+      println(s"$greeting Scala! This is $name")
+    }
+  }
+}
+     |      |      |      |      |      |      |      |      | printGreetings: (name: String)Unit
+
+scala> printGreetings("Timofey Utrobin")
+Hello Scala! This is Timofey Utrobin
+Hola Scala! This is Timofey Utrobin
+Guten tag Scala! This is Timofey Utrobin
+Hello Scala! This is nibortU yefomiT
+Hola Scala! This is nibortU yefomiT
+Guten tag Scala! This is nibortU yefomiT
+
+scala> 
