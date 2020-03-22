@@ -1,0 +1,42 @@
+C:\Users\Данил>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.6).
+Type in expressions for evaluation. Or try :help.
+
+scala> var greetings = "Hello"
+greetings: String = Hello
+
+scala> var name = "Danil"
+name: String = Danil
+
+scala> print(s"$greetings Scala! This is $name")
+Hello Scala! This is Danil
+
+scala> greetings = "Zdarova"
+greetings: String = Zdarova
+
+scala> print(s"$greetings Scala! This is $name")
+Zdarova Scala! This is Danil
+
+scala> greetings = "Sup"
+greetings: String = Sup
+
+scala> print(s"$greetings Scala! This is $name")
+Sup Scala! This is Danil
+
+scala> name = name.reverse
+name: String = linaD
+
+scala> print(s"$greetings Scala! This is $name")
+Sup Scala! This is linaD
+
+scala> greetings = "Zdarova"
+greetings: String = Zdarova
+
+scala> print(s"$greetings Scala! This is $name")
+Zdarova Scala! This is linaD
+
+scala> var greetings = "Hello"
+greetings: String = Hello
+
+scala> print(s"$greetings Scala! This is $name")
+Hello Scala! This is linaD
