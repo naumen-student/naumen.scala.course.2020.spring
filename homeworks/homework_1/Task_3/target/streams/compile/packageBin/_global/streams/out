@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/frost/IdeaProjects/task_3/target/scala-2.13/task_3_2.13-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	task_3[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/frost/IdeaProjects/task_3/target/scala-2.13/classes/task_3[0m
+[0m[[0m[0mdebug[0m] [0m[0m	task_3/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/frost/IdeaProjects/task_3/target/scala-2.13/classes/task_3/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	task_3/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/frost/IdeaProjects/task_3/target/scala-2.13/classes/task_3/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	task_3/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/frost/IdeaProjects/task_3/target/scala-2.13/classes/task_3/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
