@@ -1,0 +1,27 @@
+C:\Users\я>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 10.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val myName = "Danil Mironov"
+myName: String = Danil Mironov
+
+scala> val hello = s"Hello Scala! This is ${myName}"
+hello: String = Hello Scala! This is Danil Mironov
+
+scala> print(hello.replace("Hello", "Hola"))
+Hola Scala! This is Danil Mironov
+scala> print(hello.replace("Hello", "Guten tag"))
+Guten tag Scala! This is Danil Mironov
+scala> val reversedName = myName.reverse
+reversedName: String = vonoriM linaD
+
+scala> val hello = (helloWord: String, name: String) => s"${helloWord} Scala! This is ${name}"
+hello: (String, String) => String = $$Lambda$1127/1798485624@7db2b614
+
+scala> print(hello("Hola", reversedName))
+Hola Scala! This is vonoriM linaD
+scala> print(hello("Hello", reversedName))
+Hello Scala! This is vonoriM linaD
+scala> print(hello("Guten tag", reversedName))
+Guten tag Scala! This is vonoriM linaD
+scala>
