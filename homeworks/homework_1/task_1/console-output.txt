@@ -1,0 +1,37 @@
+➜  ~ amm
+Loading...
+Compiling (synthetic)/ammonite/predef/interpBridge.sc
+Compiling (synthetic)/ammonite/predef/replBridge.sc
+Compiling (synthetic)/ammonite/predef/sourceBridge.sc
+Compiling (synthetic)/ammonite/predef/frontEndBridge.sc
+Compiling (synthetic)/ammonite/predef/DefaultPredef.sc
+Welcome to the Ammonite Repl 2.0.4 (Scala 2.13.1 Java 13.0.2)
+@ println("Hello, Scala!")
+Hello, Scala!
+
+
+@ var name = "Mary Kuzovleva"
+name: String = "Mary Kuzovleva"
+
+@ println(s"Hello, Scala! This is ${name}")
+Hello, Scala! This is Mary Kuzovleva
+
+
+@ var greeting = Array("Hello", "Bonjour", "Ciao")
+greeting: Array[String] = Array("Hello", "Bonjour", "Ciao")
+
+@ greeting.foreach((z: String)=>s"${z}, Scala! This is ${name}")
+
+
+@ greeting.foreach((z: String)=>println(s"${z}, Scala! This is ${name}"))
+Hello, Scala! This is Mary Kuzovleva
+Bonjour, Scala! This is Mary Kuzovleva
+Ciao, Scala! This is Mary Kuzovleva
+
+
+@
+greeting.foreach((z: String)=>println(s"${z}, Scala! This is ${name.reverse}"))
+Hello, Scala! This is avelvozuK yraM
+Bonjour, Scala! This is avelvozuK yraM
+Ciao, Scala! This is avelvozuK yraM
+
