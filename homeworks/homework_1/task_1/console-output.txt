@@ -1,0 +1,27 @@
+evgenia@DESKTOP-4FMED3R:~$ scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.6).
+Type in expressions for evaluation. Or try :help.
+done.
+scala> val name = "Evgenia Dolgaeva"
+name: String = Evgenia Dolgaeva                                                                                     ^                                                             ^
+
+scala> def welcome(greeting: String, myName: String): Unit = println(greeting + " Scala! This is " + myName)
+welcome: (greeting: String, myName: String)Unit
+
+scala> welcome("Hello", name)
+Hello Scala! This is Evgenia Dolgaeva
+
+scala> welcome("Hola", name)
+Hola Scala! This is Evgenia Dolgaeva
+
+scala> welcome("Guten tag", name)
+Guten tag Scala! This is Evgenia Dolgaeva
+
+scala> welcome("Hello", name.reverse)
+Hello Scala! This is aveagloD ainegvE
+
+scala> welcome("Hola", name.reverse)
+Hola Scala! This is aveagloD ainegvE
+
+scala> welcome("Guten tag", name.reverse)
+Guten tag Scala! This is aveagloD ainegvE
