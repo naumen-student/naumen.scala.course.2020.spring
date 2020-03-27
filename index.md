@@ -6,6 +6,7 @@ layout: default
 ### Лекции
 
 * Лекция 1. [Что такое Scala?](lectures/scala_lecture_1.html)
+* Лекция 2. [Программирование на Scala. Базовые концепции.(PowerPoint)](lectures/scala_lecture_2.pptx)
 
 
 ### Домашние задания
