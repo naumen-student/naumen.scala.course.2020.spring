@@ -121,7 +121,7 @@ object Exercises {
   ): Seq[String] = //it's not ok to request to return a Seq. I can return any unordered collection from sort-like method
     ballsArray.toList
       .sortBy {
-        case (_, (radius, density)) => 4 * Pi * radius * radius / 3 * density
+        case (_, (radius, density)) => 4 * Pi * radius * radius * radius / 3 * density
       }
       .map(_._1)
 
