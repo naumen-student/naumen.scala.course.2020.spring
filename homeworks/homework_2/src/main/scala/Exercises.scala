@@ -21,7 +21,6 @@ object Exercises {
     case (acc, i) => if (i % 3 == 0 || i % 5 == 0) acc + i else acc
   }
 
-
   /*ЗАДАНИЕ II*/
   /*Реализовать функцию, которая вычисляет все различные простые множители целого числа отличные от 1.
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
@@ -29,15 +28,15 @@ object Exercises {
   /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
 
   def primeFactor(number: Int): Seq[Int] = {
-      @tailrec
-      def foo(x: Int, a: Int = 2, list: List[Int] = Nil): List[Int] = a*a > x match {
-        case false if x % a == 0 => foo(x / a, a    , a :: list)
-        case false               => foo(x    , a + 1, list)
-        case true                => x :: list
+    @tailrec
+    def factors(x: Int, from: Int, acc: List[Int]): List[Int] =
+      from * from > x match {
+        case false if x % from == 0 => factors(x / from, from, from :: acc)
+        case false                  => factors(x, from + 1, acc)
+        case true                   => x :: acc
       }
-      foo(number).distinct.sorted
+    factors(number, 2, Nil).distinct.sorted
   }
-
 
   /*ЗАДАНИЕ III*/
   /*Дано: класс двумерного вектора, а также функции вычисления модуля вектора (abs), вычисления скалярного произведения
@@ -48,8 +47,8 @@ object Exercises {
   /*Реализовать юнит-тесты в src/test/scala для функций sumScalars и sumCosines*/
   case class Vector2D(x: Double, y: Double)
 
-  implicit class vector2DOps(x: Double){
-    def ->>(y: Double): Vector2D = Vector2D(x,y)
+  implicit class vector2DOps(x: Double) {
+    def ->>(y: Double): Vector2D = Vector2D(x, y)
   }
 
   def abs(vec: Vector2D): Double =
@@ -121,7 +120,8 @@ object Exercises {
   ): Seq[String] = //it's not ok to request to return a Seq. I can return any unordered collection from sort-like method
     ballsArray.toList
       .sortBy {
-        case (_, (radius, density)) => 4 * Pi * radius * radius * radius / 3 * density
+        case (_, (radius, density)) =>
+          4 * Pi * radius * radius * radius / 3 * density
       }
       .map(_._1)
 
