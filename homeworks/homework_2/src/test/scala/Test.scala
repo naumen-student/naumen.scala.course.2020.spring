@@ -12,25 +12,31 @@ object Test extends TestSuite{
 
     val firstTaskTests = Tests{
         'sumOfDivBy3Or5 - {
-            assert(Exercise.sumOfDivBy3Or5(5, 6) == 11)
-            assert(Exercise.sumOfDivBy3Or5(1, 20) == 98)
-            assert(Exercise.sumOfDivBy3Or5(33, 36) == 104)
+            assert(Exercises.sumOfDivBy3Or5(5, 6) == 11)
+            assert(Exercises.sumOfDivBy3Or5(1, 20) == 98)
+            assert(Exercises.sumOfDivBy3Or5(33, 36) == 104)
         }
     }
 
     val secondTaskTests = Tests{
         'primeFactor - {
-            assert()
-            assert()
-            assert()
+            assert(Exercises.primeFactor(80) == Seq(2, 5))
+            assert(Exercises.primeFactor(98) == Seq(2, 7))
+            assert(Exercises.primeFactor(30) == Seq(2, 3, 5))
         }
     }
 
     val thirdTaskTests = Tests{
         'sumByFunc - {
-            assert()
-            assert()
-            assert()
+            assert(Exercises.sumScalars(Exercises.Vector2D(6, 2), Exercises.Vector2D(-3, 10), Exercises.Vector2D(2, 3), Exercises.Vector2D(2, 9)) == 33.0)
+            assert(Exercises.sumScalars(Exercises.Vector2D(-6, 2), Exercises.Vector2D(5, 6), Exercises.Vector2D(2, -3), Exercises.Vector2D(7, 14)) == -46.0)
+            assert(Exercises.sumScalars(Exercises.Vector2D(1, 0), Exercises.Vector2D(0, 2), Exercises.Vector2D(0, 1), Exercises.Vector2D(0, 1)) == 1.0)
+        }
+
+        'sumCosines - {
+            assert(Exercises.sumCosines(Exercises.Vector2D(2, -1), Exercises.Vector2D(3, 8), Exercises.Vector2D(0, 6), Exercises.Vector2D(-2, 4)) == 0.7897424064818731)
+            assert(Exercises.sumCosines(Exercises.Vector2D(1, 0), Exercises.Vector2D(0, 2), Exercises.Vector2D(0, 1), Exercises.Vector2D(0, 1)) == 1.0)
+            assert(Exercises.sumCosines(Exercises.Vector2D(-6, 2), Exercises.Vector2D(5, 6), Exercises.Vector2D(2, -3), Exercises.Vector2D(7, 14)) == -0.8605382869373461)
         }
     }
 
