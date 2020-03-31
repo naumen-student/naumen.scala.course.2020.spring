@@ -40,7 +40,7 @@ object Exercises {
             if (num % mtp == 0)
                 set += mtp
         while (num % mtp == 0)
-            num == num /mtp
+            num = num /mtp
             mtp+1
         }
 
