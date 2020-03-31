@@ -1,4 +1,4 @@
-import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.Set
 
 object Exercises {
 
@@ -90,6 +90,9 @@ object Exercises {
             "Chrome" ->   (3,   7.18),   "Cesium" ->    (7,   1.873), "Zirconium" -> (3,   6.45)
         )
 
-    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
+    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = {
+      def getWeight(ball: (Int, Double)): Double = {4 / 3 * math.Pi * math.pow(ball._1, 3) * ball._2}
 
+      ballsArray.mapValues(getWeight).toSeq.sortBy(_._2).map(_._1)
+    }
 }

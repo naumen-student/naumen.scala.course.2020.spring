@@ -42,9 +42,9 @@ object Test extends TestSuite{
 
     val fourthTaskTests = Tests{
         'sortByHeavyweight - {
-            assert()
-            assert()
-            assert()
+            assert(Exercises.sortByHeavyweight(Map("Graphite" -> (12, 2.1), "Iron" -> (3, 7.874))) == Seq("Iron", "Graphite"))
+            assert(Exercises.sortByHeavyweight(Map("Aluminum" -> (3, 2.6889), "Tungsten" -> (2, 19.35), "Chrome" -> (3, 7.18), "Cesium" -> (7, 1.873))) == Seq("Aluminum", "Tungsten", "Chrome", "Cesium"))
+            assert(Exercises.sortByHeavyweight(Map("Gold" -> (2, 19.32), "Iron" -> (3, 7.874), "Tin" -> (1, 7.29))) == Seq("Tin", "Gold", "Iron"))
         }
     }
 }
