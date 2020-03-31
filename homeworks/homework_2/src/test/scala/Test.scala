@@ -3,7 +3,7 @@ import utest._
 
 object Test extends TestSuite{
 
-    val tests = Tests{
+    val tests: Tests = Tests{
         'test_divBy3Or7 - {
             assert(Exercises.divBy3Or7(1, 3) == Seq(3))
             assert(Exercises.divBy3Or7(5, 9) == Seq(6, 7, 9))
@@ -25,11 +25,10 @@ object Test extends TestSuite{
             Exercises.sumScalars(Vector2D(0,0), Vector2D(1,2), Vector2D(1,2), Vector2D(7,6)) ==> 19
             Exercises.sumScalars(Vector2D(-1, -2), Vector2D(1, 2), Vector2D(-1, 2), Vector2D(1, -2)) ==> -10
         }
-//        'test_sumCosines - {
-//            assert(Exercises.sumCosines() == ???)
-//            assert(Exercises.sumCosines() == ???)
-//            assert(Exercises.sumCosines() == ???)
-//        }
+        'test_sumCosines - {
+            Exercises.sumCosines(Vector2D(1, 2), Vector2D(1, 2), Vector2D(1, 2), Vector2D(1, 2)) ==> 2.0
+            assert(Exercises.sumCosines(Vector2D(-0.5, -2), Vector2D(2, 0), Vector2D(-1, 2), Vector2D(1, -2)) - -1.2425 <= Double.MinPositiveValue)
+        }
         'test_getVolume - {
             assert(Exercises.getVolume(0) - 0 <= Double.MinPositiveValue)
             assert(Exercises.getVolume(2) - 33 <= Double.MinPositiveValue)
