@@ -9,4 +9,36 @@ object Test extends TestSuite{
             assert(Exercises.divBy3Or7(0, 100) == Seq(0, 3, 6, 7, 9, 12, 14, 15, 18, 21, 24, 27, 28, 30, 33, 35, 36, 39, 42, 45, 48, 49, 51, 54, 56, 57, 60, 63, 66, 69, 70, 72, 75, 77, 78, 81, 84, 87, 90, 91, 93, 96, 98, 99))
         }
     }
+
+    val firstTaskTests = Tests{
+        'sumOfDivBy3Or5 - {
+            assert(Exercise.sumOfDivBy3Or5(5, 6) == 11)
+            assert(Exercise.sumOfDivBy3Or5(1, 20) == 98)
+            assert(Exercise.sumOfDivBy3Or5(33, 36) == 104)
+        }
+    }
+
+    val secondTaskTests = Tests{
+        'primeFactor - {
+            assert()
+            assert()
+            assert()
+        }
+    }
+
+    val thirdTaskTests = Tests{
+        'sumByFunc - {
+            assert()
+            assert()
+            assert()
+        }
+    }
+
+    val fourthTaskTests = Tests{
+        'sortByHeavyweight - {
+            assert()
+            assert()
+            assert()
+        }
+    }
 }
