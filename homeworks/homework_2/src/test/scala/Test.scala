@@ -1,3 +1,4 @@
+import Exercises.Vector2D
 import utest._
 
 object Test extends TestSuite{
@@ -16,6 +17,16 @@ object Test extends TestSuite{
         'test_primeFactor - {
             assert(Exercises.primeFactor(80) == Seq(2, 5))
             assert(Exercises.primeFactor(98) == Seq(2, 7))
+        }
+        'test_sumScalars - {
+            assert(Exercises.sumScalars(Vector2D(0, 1), Vector2D(1, 0), Vector2D(2, 6), Vector2D(-1, 2)) == 10)
+        }
+        'test_sumCosines - {
+            assert(Exercises.sumCosines(Vector2D(0, 1), Vector2D(1, 0), Vector2D(2, 6), Vector2D(-1, 2)) - 0.7072 < 0.0001)
+        }
+        'test_sortByHeavyweight - {
+            assert(Exercises.sortByHeavyweight(Map("A" -> (1, 1), "B" -> (2, 4), "C" -> (2, 1))) == Seq("A", "C", "B"))
+            assert(Exercises.sortByHeavyweight().take(1) == Seq("Tin"))
         }
     }
 }
