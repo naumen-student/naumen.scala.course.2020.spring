@@ -29,14 +29,14 @@ object Exercises {
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = factor(number, 2, Seq.empty[Int])
+    def primeFactor(number: Int): Seq[Int] = factor(number, 2, Seq.empty[Int]).distinct
 
     @scala.annotation.tailrec
     def factor(number: Int, delimiter: Int, result: Seq[Int]) : Seq[Int] = {
-        if (number == 0)
+        if (number == 1)
             result
         else if (number % delimiter == 0)
-            factor(number % delimiter, delimiter, result :+ delimiter)
+            factor(number / delimiter, delimiter, result :+ delimiter)
         else
             factor(number, delimiter + 1, result)
     }
