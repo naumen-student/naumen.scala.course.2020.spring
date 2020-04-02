@@ -16,7 +16,13 @@ object Exercises {
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
+    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = {
+        if (iFrom > iTo)
+            throw new IllegalArgumentException("iFrom must be greater or equal than iTo")
+        (iFrom to iTo)
+            .filter(number => number % 3 == 0 || number % 5 == 0)
+            .sum
+    }
 
 
 
@@ -25,8 +31,24 @@ object Exercises {
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = ???
+    def primeFactor(number: Int): Seq[Int] = {
+        var factors = Set[Int]()
 
+        var dividend = number
+        var divisor = 2
+        while (divisor * divisor <= dividend) {
+            if (dividend % divisor == 0) {
+                factors += divisor
+                dividend /= divisor
+            } else {
+                divisor += 1
+            }
+        }
+
+        if (dividend > 1) factors += dividend
+
+        factors.toSeq
+    }
 
 
     /*ЗАДАНИЕ III*/
@@ -40,17 +62,21 @@ object Exercises {
     def abs(vec: Vector2D): Double = java.lang.Math.sqrt(vec.x * vec.x + vec.y * vec.y)
     def scalar(vec0: Vector2D, vec1: Vector2D): Double = vec0.x * vec1.x + vec0.y * vec1.y
     def cosBetween(vec0: Vector2D, vec1: Vector2D): Double = scalar(vec0, vec1) / abs(vec0) / abs(vec1)
-    //def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, ???, rightVec0: Vector2D, rightVec1: Vector2D) = ???
-    /*
+    def sumByFunc(
+                   leftVec0: Vector2D,
+                   leftVec1: Vector2D,
+                   func: (Vector2D, Vector2D) => Double,
+                   rightVec0: Vector2D,
+                   rightVec1: Vector2D
+                 ): Double = {
+        func(leftVec0, leftVec1) + func(rightVec0, rightVec1)
+    }
+
     def sumScalars(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, scalar, rightVec0, rightVec1)
-    */
-    /*
+
     def sumCosines(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, cosBetween, rightVec0, rightVec1)
-    */
-
-
 
     /*ЗАДАНИЕ IV*/
     /*Дано: коллекция металлических шариков balls, где каждый элемент представлен в виде (Name: String -> (radius: Int, density: Double).
@@ -71,6 +97,10 @@ object Exercises {
             "Chrome" ->   (3,   7.18),   "Cesium" ->    (7,   1.873), "Zirconium" -> (3,   6.45)
         )
 
-    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
-
+    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = {
+        ballsArray
+            .toList
+            .sortBy(ball => 4 / 3 * ball._2._2 * java.lang.Math.PI * java.lang.Math.pow(ball._2._1, 3))
+            .map(_._1)
+    }
 }
