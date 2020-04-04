@@ -12,11 +12,28 @@ object Exercises {
      * Реализуйте функцию тремя разными способами, отличающимися тем, как определяется какой тип имеет значение переданное в аргументе. 
      * Определение типа необходимо для реализации специальной логики работы с Boolean значениями, которая описана в условии выше.
      */
-    def prettyBooleanFormatter1(x: Any): String = ???
+    def prettyBooleanFormatter1(x: Any): String = x match {
+        case b: Boolean => if (b) "правда" else "ложь"
+        case _ => x.toString
+    }
 
-    def prettyBooleanFormatter2(x: Any): String = ???
+    def prettyBooleanFormatter2(x: Any): String = {
+        if (!x.isInstanceOf[Boolean])
+            x.toString
+        else if (x.asInstanceOf[Boolean])
+            "правда"
+        else
+            "ложь"
+    }
 
-    def prettyBooleanFormatter3(x: Any): String = ???
+    def prettyBooleanFormatter3(x: Any): String = {
+        if (x.getClass.getSimpleName != "Boolean")
+            x.toString
+        else if (x.asInstanceOf[Boolean])
+            "правда"
+        else
+            "ложь"
+    }
 
 
     /**
@@ -26,11 +43,20 @@ object Exercises {
      * Реализуйте функцию тремя разными способами, отличающимися тем как функция себя ведет на пустой коллекции. 
      * Обратите внимание на возвращаемые типы.
      */
-    def max1(xs: Seq[Int]): Int = ???
+    def max1(xs: Seq[Int]): Int = xs match {
+        case Seq() => Int.MinValue
+        case _ => xs.max
+    }
 
-    def max2(xs: Seq[Int]): Seq[Int] = ???
+    def max2(xs: Seq[Int]): Seq[Int] = xs match {
+        case Seq() => xs
+        case _ => Seq(xs.max)
+    }
 
-    def max3(xs: Seq[Int]): Option[Int] = ???
+    def max3(xs: Seq[Int]): Option[Int] = xs match {
+        case Seq() => None
+        case _ => Some(xs.max)
+    }
 
     /**
      * Задание №3
