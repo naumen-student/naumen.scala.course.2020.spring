@@ -24,7 +24,7 @@ object Test extends TestSuite{
             assert(Exercises.prettyBooleanFormatter2(2) == "2")
             assert(Exercises.prettyBooleanFormatter3(3) == "3")
         }
-        'test_sum - {
+        'test_max - {
             assert(Exercises.max1(Seq.empty) == Int.MinValue)
             assert(Exercises.max1(Seq(1)) == 1)
             assert(Exercises.max1(Seq(10, -5, 3, 8, 0, 12, 5, 5)) == 12)
@@ -36,6 +36,19 @@ object Test extends TestSuite{
             assert(Exercises.max3(Seq.empty) == None)
             assert(Exercises.max3(Seq(1)) == Some(1))
             assert(Exercises.max3(Seq(10, -5, 3, 8, 0, 12, 5, 5)) == Some(12))
+        }
+        'test_sum - {
+            assert(Exercises.sum1(1, 2) == 3)
+            assert(Exercises.sum1(0, 0) == 0)
+            assert(Exercises.sum1(100, -100) == 0)
+
+            assert(Exercises.sum2(1, 2) == 3)
+            assert(Exercises.sum2(0, 0) == 0)
+            assert(Exercises.sum2(100, -100) == 0)
+
+            assert(Exercises.sum3(1, 2) == 3)
+            assert(Exercises.sum3(0, 0) == 0)
+            assert(Exercises.sum3(100, -100) == 0)
         }
     }
 }
