@@ -1,7 +1,7 @@
 import scala.annotation.tailrec
 import scala.collection.immutable.HashSet
 
-sealed trait Cell {}
+sealed trait Cell
 
 class EmptyCell extends Cell {
     override def toString: String = "empty"
