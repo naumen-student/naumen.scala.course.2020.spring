@@ -5,7 +5,7 @@ object Test extends TestSuite {
         'test_createTable - {
             val table = new Table(3, 3)
             for (i <- 0 until 9) {
-                assert(table.getCell(i / 3, i % 3).toString == Some("empty"))
+                assert(table.getCell(i / 3, i % 3).map(_.toString) == Some("empty"))
             }
             assert(table.getCell(0, -1).map(_.toString) == None)
             assert(table.getCell(-1, 0).map(_.toString) == None)
@@ -45,7 +45,7 @@ object Test extends TestSuite {
             val cellInt11 = new NumberCell(11)
             val cellRef12 = new ReferenceCell(0, 0, table)
             /*ix = 2*/
-            val cellEmpty20 = new EmptyCell
+            val cellEmpty20 = EmptyCell
             val cellRef21 = new ReferenceCell(1, 1, table)
             val cellRef22 = new ReferenceCell(2, 1, table)
             table.setCell(0, 0, cellStr00)
