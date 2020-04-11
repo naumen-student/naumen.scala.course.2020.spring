@@ -1,0 +1,59 @@
+Microsoft Windows [Version 10.0.18362.207]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2019. Все права защищены.
+
+C:\Users\User>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_241).
+Type in expressions for evaluation. Or try :help.
+
+scala> val hello = "Hello"
+hello: String = Hello
+
+scala> val name = "Mr Anton Kokorin"
+name: String = Mr Anton Kokorin
+
+scala> val text = s"${hello} Scala! This is ${name}"
+text: String = Hello Scala! This is Mr Anton Kokorin
+
+scala> println(text)
+Hello Scala! This is Mr Anton Kokorin
+
+scala> val hello = "Hohoho"
+hello: String = Hohoho
+
+scala> println(text)
+Hello Scala! This is Mr Anton Kokorin
+
+scala> val text = s"${hello} Scala! This is ${name}"
+text: String = Hohoho Scala! This is Mr Anton Kokorin
+
+scala> println(text)
+Hohoho Scala! This is Mr Anton Kokorin
+
+scala> val hello = "WHASSUPPP!"
+hello: String = WHASSUPPP!
+
+scala> val text = s"${hello} Scala! This is ${name}"
+text: String = WHASSUPPP! Scala! This is Mr Anton Kokorin
+
+scala> val text = s"${hello} Scala! This is ${name.reverse}"
+text: String = WHASSUPPP! Scala! This is nirokoK notnA rM
+
+scala> val text = s"${hello} Scala! This is ${name.toLowerCase}"
+text: String = WHASSUPPP! Scala! This is mr anton kokorin
+
+scala> val text = s"${hello.toLowerCase} Scala! This is ${name.reverse}"
+text: String = whassuppp! Scala! This is nirokoK notnA rM
+
+scala> val name2 = name.toLowerCase
+name2: String = mr anton kokorin
+
+scala> val text = s"${hello.toLowerCase} Scala! This is ${name2}"
+text: String = whassuppp! Scala! This is mr anton kokorin
+
+scala> val text = s"${hello.toLowerCase} Scala! This is ${name2.split(' ').map(_.capitalize).mkString(" ")}"
+text: String = whassuppp! Scala! This is Mr Anton Kokorin
+
+scala> println(text)
+whassuppp! Scala! This is Mr Anton Kokorin
+
+scala>
