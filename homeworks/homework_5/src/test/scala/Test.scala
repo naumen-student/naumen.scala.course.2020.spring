@@ -52,7 +52,6 @@ object Test extends TestSuite {
         "Kuzya eats meat"
       )
     )
-
   }
 
 }
