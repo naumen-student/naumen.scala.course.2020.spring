@@ -1,0 +1,47 @@
+tvgs@LAPTOP-ACER:~/downloads/scala-2.13.1/bin$ ./scala
+Welcome to Scala 2.13.1 (OpenJDK 64-Bit Server VM, Java 1.8.0_242).
+Type in expressions for evaluation. Or try :help.
+
+scala> def hello(greeting: String, name: String) = println(s"$greeting Scala! This is $name")
+hello: (greeting: String, name: String)Unit
+
+scala> var greeting = "Hello"
+greeting: String = Hello
+
+scala> val name = "Dima Kholstinin"
+name: String = Dima Kholstinin
+
+scala> hello(greeting, name)
+Hello Scala! This is Dima Kholstinin
+
+scala> greeting = "Hola"
+mutated greeting
+
+scala> hello(greeting, name)
+Hola Scala! This is Dima Kholstinin
+
+scala> greeting = "Guten tag"
+mutated greeting
+
+scala> hello(greeting, name)
+Guten tag Scala! This is Dima Kholstinin
+
+scala> val reversedName = name.re
+reduce             reduceOption        regionMatches   replaceAllLiterally   reverse
+reduceLeft         reduceRight         replace         replaceFirst          reverseIterator
+reduceLeftOption   reduceRightOption   replaceAll      repr                  reverseMap
+
+scala> val reversedName = name.reverse
+reversedName: String = ninitslohK amiD
+
+scala> hello("Hello", re
+ref   refArrayOps   reflect   require   res1   res2   res3   res4   reversedName
+
+scala> hello("Hello", reversedName)
+Hello Scala! This is ninitslohK amiD
+
+scala> hello("Hola", reversedName)
+Hola Scala! This is ninitslohK amiD
+
+scala> hello(greeting, reversedName)
+Guten tag Scala! This is ninitslohK amiD
