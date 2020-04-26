@@ -1,0 +1,30 @@
+Microsoft Windows [Version 10.0.18363.657]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2019. Все права защищены.
+
+C:\naumen.scala.course.2020.spring>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_241).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name = "Alexandr"
+name: String = Alexandr
+
+scala> var greet = (greeting: String, name: String) => println(s"${greeting} Scala! This is ${name}")
+greet: (String, String) => Unit = $$Lambda$1054/2041983781@708769b7
+
+scala> greet("Hello", name)
+Hello Scala! This is Alexandr
+
+scala> greet("Hola", name)
+Hola Scala! This is Alexandr
+
+scala> greet("Guten tag", name)
+Guten tag Scala! This is Alexandr
+
+scala> greet("Guten tag", name.reverse)
+Guten tag Scala! This is rdnaxelA
+
+scala> greet("Hola", name.reverse)
+Hola Scala! This is rdnaxelA
+
+scala> greet("Hello", name.reverse)
+Hello Scala! This is rdnaxelA
