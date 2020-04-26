@@ -20,19 +20,19 @@ class StringCell(s: String) extends Cell {
 }
 
 class ReferenceCell(ix: Int, iy: Int, table: Table) extends Cell {
-  override def toString: String = toStringInternal(getValue, Set(this))
+  override def toString: String = toStringInternal(getCell, Set(this))
 
   @scala.annotation.tailrec
   private def toStringInternal(cell: Option[Cell], visited: Set[Cell]): String = {
     cell match {
       case None => "outOfRange"
       case Some(cell) => cell match {
-        case cell: ReferenceCell => if (visited.contains(cell)) "cyclic" else
-          toStringInternal(cell.getValue, visited + cell)
+        case refCell: ReferenceCell => if (visited.contains(refCell)) "cyclic" else
+          toStringInternal(refCell.getCell, visited + refCell)
         case _ => cell.toString
       }
     }
   }
 
-  private def getValue: Option[Cell] = table.getCell(ix, iy)
+  private def getCell: Option[Cell] = table.getCell(ix, iy)
 }

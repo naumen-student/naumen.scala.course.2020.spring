@@ -7,9 +7,7 @@ class Table(width: Int, height: Int) {
   }
 
   def setCell(ix: Int, iy: Int, cell: Cell): Unit = {
-    if (!isInTable(ix, iy)) {
-      return
-    }
+    if (!isInTable(ix, iy)) return
     table(ix)(iy) = cell
   }
 
