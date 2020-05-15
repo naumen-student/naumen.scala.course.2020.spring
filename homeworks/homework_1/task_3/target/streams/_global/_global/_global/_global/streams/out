@@ -1,0 +1,3 @@
+[debug] [watch] [sbt / Compile / run] Found inputs: C:\Users\alex1\Desktop\SBT\*.{java,scala},C:\Users\alex1\Desktop\SBT\src\main\java\**\*.{java,scala},C:\Users\alex1\Desktop\SBT\src\main\resources\**\*,C:\Users\alex1\Desktop\SBT\src\main\scala\**\*.{java,scala},C:\Users\alex1\Desktop\SBT\src\main\scala-2.13\**\*.{java,scala}
+[info] 1. Monitoring source files for sbt/run...
+[info]    Press <enter> to interrupt or '?' for more options.

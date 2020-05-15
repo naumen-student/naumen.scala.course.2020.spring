@@ -1,3 +1,5 @@
+import scala.collection.immutable.ListMap
+
 object Exercises {
 
     /*ПРИМЕР*/
@@ -16,7 +18,7 @@ object Exercises {
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
+    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = (iFrom to iTo).toSeq.filter(i => i % 3 == 0 || i % 5 == 0).sum
 
 
 
@@ -25,7 +27,16 @@ object Exercises {
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = ???
+    def primeFactor(number: Int): Seq[Int] = {
+        def foo(x:Int, l:Int): List[Int] = {
+            if (l > Math.sqrt(x)) return List(x)
+            x % l match {
+                case 0 => l :: foo(x / l, l)
+                case _ => foo(x, l + 1)
+            }
+        }
+        foo(number, 2).filter(_ != 1).distinct
+    }
 
 
 
@@ -40,24 +51,26 @@ object Exercises {
     def abs(vec: Vector2D): Double = java.lang.Math.sqrt(vec.x * vec.x + vec.y * vec.y)
     def scalar(vec0: Vector2D, vec1: Vector2D): Double = vec0.x * vec1.x + vec0.y * vec1.y
     def cosBetween(vec0: Vector2D, vec1: Vector2D): Double = scalar(vec0, vec1) / abs(vec0) / abs(vec1)
-    //def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, ???, rightVec0: Vector2D, rightVec1: Vector2D) = ???
-    /*
+    def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, func: (Vector2D, Vector2D) => Double, rightVec0: Vector2D, rightVec1: Vector2D) =
+        func(leftVec0, leftVec1) + func(rightVec0, rightVec1)
     def sumScalars(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, scalar, rightVec0, rightVec1)
-    */
-    /*
+
     def sumCosines(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, cosBetween, rightVec0, rightVec1)
-    */
+
 
 
 
     /*ЗАДАНИЕ IV*/
-    /*Дано: коллекция металлических шариков balls, где каждый элемент представлен в виде (Name: String -> (radius: Int, density: Double).
+    /*Дано: коллекция металлических шариков balls, где каждый элемент представлен в виде
+    (Name: String -> (radius: Int, density: Double).
     Здесь radius - радиус шарика [см], а density - плотность материала [г / (см^3)], из которого он изготовлен (например,
     для серебра в коллекции представлен шарик "Silver" радиуса 4 см и плотности 4.505 г / (см^3) )
-    Необходимо реализовать функцию sortByHeavyweight, которая принимает коллекцию такого формата и возвращает список названий материалов шариков,
-    упорядоченный в зависимости от массы шариков (первый элемент списка соответствует наиболее "лёгкому" шарику, последний - наиболее "тяжёлому").
+    Необходимо реализовать функцию sortByHeavyweight, которая принимает коллекцию такого формата и возвращает список
+    названий материалов шариков,
+    упорядоченный в зависимости от массы шариков (первый элемент списка соответствует наиболее "лёгкому" шарику,
+    последний - наиболее "тяжёлому").
     В качестве значения числа "Пи" можно использовать java.lang.Math.PI
     */
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
@@ -71,6 +84,11 @@ object Exercises {
             "Chrome" ->   (3,   7.18),   "Cesium" ->    (7,   1.873), "Zirconium" -> (3,   6.45)
         )
 
-    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
+    val pi = java.lang.Math.PI
+    def getVolume(radius: Int): Double = 4/3 * pi * scala.math.pow(radius, 3)
+    def getMass(radius_density: (Int, Double)): Double = getVolume(radius_density._1) * radius_density._2
+
+    val mass = balls map {case (key, value) => (key, getMass(value))}
+    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ListMap(mass.toSeq.sortWith(_._2 < _._2):_*).keys.toSeq
 
 }
