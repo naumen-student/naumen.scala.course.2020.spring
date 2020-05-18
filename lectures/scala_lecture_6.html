@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Scala Collection</title>
+
+    <meta name="description" content="Scala. Collection">
+    <meta name="author" content="Titov Egor">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <link rel="stylesheet" href="css/hljs/vs.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="footer">
+            <span class="corp-name"><b>NAUMEN </b></span>Титов Егор
+        </div>
+<div class="slides">
+<section>
+    <h1>Scala collection</h2>
+</section>
+<section>
+    <h2>Коллекции</h2>
+    <ul>
+        <li>списки</li>
+        <li>множества</li>
+        <li>массивы</li>
+        <li>вектора</li>
+        <li>Option</li>
+    </ul>
+</section>
+<section>
+    <h2>Списки. List</h2>
+    <ul>
+        <li>однородны
+            <ul><li>List[String] не может содержать элементы Int</li></ul>
+        </li>
+        <li>ковариантны
+            <ul><li>если T подтип S, то и List[T] подтип List[S]</li></ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h2>List. Создание 1</h2>
+<pre style="width:auto;"><code data-trim class="scala small"> 
+val list0 = List() 
+//list0: List[Nothing] = List()
+
+val list1 = List(1, 2, 3) 
+//list1: List[Int] = List(1, 2, 3)
+
+val list2 = List.range(1,5) 
+//list2: List[Int] = List(1, 2, 3, 4)
+val list2a = List.range(1, 5, 2) 
+//list2a: List[Int] = List(1, 3)
+
+val list3 = List.fill(5)("lol") 
+//list3: List[String] = List("lol", "lol", "lol", "lol", "lol")
+
+val list4 = List.tabulate(5)(n =&gt; n/2.0) 
+//list4: List[Double] = List(0.0, 0.5, 1.0, 1.5, 2.0)
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>List. Создание 2</h2>
+
+Nil - пустой список
+<pre style="width:auto;"><code data-trim class="scala small">
+val empty = Nil 
+//empty: Nil.type = List()
+
+
+val list = 3 :: 2 :: 1 :: Nil 
+//list: List[Int] = List(3, 2, 1)
+
+val d = Nil 
+//d: Nil.type = List()
+val c = 3 :: d 
+//c: List[Int] = List(3)
+val b = 2 :: c 
+//b: List[Int] = List(2, 3)
+val a = 1 :: b 
+//a: List[Int] = List(1, 2, 3)
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>List. Шаблоны</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val List(a, b, c) = List(1, 2, 3) 
+//a: Int = 1
+//b: Int = 2
+//c: Int = 3
+
+val x :: y :: z = List(1, 2, 3) 
+//x: Int = 1
+//y: Int = 2
+//z: List[Int] = List(3)
+</code></pre>
+
+
+</section>
+<section>
+    <h2>List. Шаблоны</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val List(a, b, c) = List(1, 2, 3, 4) 
+//scala.MatchError: List(1, 2, 3, 4) (of class 
+//  scala.collection.immutable.$colon$colon)
+//  ammonite.$sess.cmd33$.&lt;clinit&gt;(cmd33.sc:1)
+
+val x :: y :: z = List(1, 2, 3, 4, 5) 
+//x: Int = 1
+//y: Int = 2
+//z: List[Int] = List(3, 4, 5)
+
+val x :: y :: z = List(1, 2) 
+//x: Int = 1
+//y: Int = 2
+//z: List[Int] = List()
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>Методы. head, tail, isEmpty</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val head = List(1, 2, 3, 4, 5).head 
+//head: Int = 1
+
+val tail = List(1, 2, 3, 4, 5).tail 
+//tail: List[Int] = List(2, 3, 4, 5)
+
+val isEmpty = List(1, 2, 3, 4, 5).isEmpty 
+//isEmpty: Boolean = false
+
+val isEmptyNil = Nil.isEmpty 
+//isEmptyNil: Boolean = true
+</code></pre>
+
+</section>
+<section>
+    <h2>List. много других методов</h2>
+    <ul>
+        <li>Scala предоставляет множество методов для работы с коллекциями</li>
+        <li>Начнем с методов первого порядка</li>
+    </ul>
+</section>
+<section>
+    <h2>::: Объединение списков</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val `2list1` = List(1, 2) ::: List(3, 4, 5) 
+//`2list1`: List[Int] = List(1, 2, 3, 4, 5)
+
+val `2list2`= List() ::: List(1, 2, 3) 
+//`2list2`: List[Int] = List(1, 2, 3)
+
+val `2list3` = Nil  ::: List(1, 2, 3) 
+//`2list3`: List[Int] = List(1, 2, 3)
+</code></pre>
+
+</section>
+<section>
+    <h2>length, indices</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val len1 = List(1, 2, 3).length
+//len1: Int = 3
+
+val len2 = List().length 
+//len2: Int = 0
+
+val len3 = Nil.length 
+//len3: Int = 0
+
+val idx1 = List(1, 2, 3).indices 
+//idx1: Range = Range(0, 1, 2)
+
+val idx2 = Nil.indices 
+//idx2: Range = Range()
+</code></pre>
+
+
+
+</section>
+<section>
+    <h2> init, last. Конец и начало</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val abcde = List('a', 'b', 'c', 'd', 'e') 
+//abcde: List[Char] = List('a', 'b', 'c', 'd', 'e')
+
+val last1 = abcde.last 
+//last1: Char = 'e'
+
+val init1 = abcde.init 
+//init1: List[Char] = List('a', 'b', 'c', 'd')
+
+List().init 
+//java.lang.UnsupportedOperationException: init of empty list
+//  scala.collection.immutable.Nil$.init(List.scala:596)
+//  ...
+
+List().last 
+//java.util.NoSuchElementException: last of empty list
+//  scala.collection.immutable.Nil$.last(List.scala:595)
+//  ...
+</code></pre>
+
+
+</section>
+<section>
+    <h2>reverse</h2>
+
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val edcba = List("e", "d", "c", "b", "a") 
+//edcba: List[String] = List("e", "d", "c", "b", "a")
+
+val reverse1 = edcba.reverse 
+//reverse1: List[String] = List("a", "b", "c", "d", "e")
+</code></pre>
+
+
+</section>
+<section>
+    <h2>reverse для внимательных</h2>
+
+<pre style="width:auto;"><code data-trim class="text">
+lst.reverse.init &lt;=&gt; lst.tail.reverse
+lst.reverse.tail &lt;=&gt; lst.init.reverse
+lst.reverse.head &lt;=&gt; lst.last
+lst.reverse.last &lt;=&gt; lst.head
+</code></pre>
+
+
+</section>
+<section>
+    <h2>drop, take и splitAt</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val abcde = List('a', 'b', 'c', 'd', 'e') 
+
+val teke1 = abcde.take(2) 
+//teke1: List[Char] = List('a', 'b')
+
+val drop1 = abcde.drop(2) 
+//drop1: List[Char] = List('c', 'd', 'e')
+
+val splitat1 = abcde.splitAt(2) 
+//splitat1: (List[Char], List[Char]) = (List('a', 'b'), List('c', 'd', 'e'))
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2> flatten</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val flatten1 = List(List(1, 2), List(3), List(), List(4,5)).flatten 
+//flatten1: List[Int] = List(1, 2, 3, 4, 5)
+
+val flatten2 = List(1, 2, 3).flatten 
+//cmd22.sc:1: No implicit view available from Int =&gt; scala.collection.IterableOnce[B].
+//val flatten2 = List(1, 2, 3).flatten                                                                                                                  
+//                             ^
+//Compilation Failed
+
+val flatten3 = List(List(List(), List(1)), List(List(2))).flatten 
+//flatten3: List[List[Int]] = List(List(), List(1), List(2))
+</code></pre>
+
+
+</section>
+<section>
+    <h2>zip и unzip</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val abcde = List('a', 'b', 'c', 'd', 'e') 
+
+val zip1 = abcde.indices.zip(abcde) 
+//zip1: IndexedSeq[(Int, Char)] = Vector((0, 'a'), (1, 'b'), (2, 'c'), (3, 'd'), (4, 'e'))
+
+val zip2 = abcde.zip(List(1, 2, 3)) 
+//zip2: List[(Char, Int)] = List(('a', 1), ('b', 2), ('c', 3))
+
+val zipIdx = abcde.zipWithIndex 
+/zipIdx: List[(Char, Int)] = List(('a', 0), ('b', 1), ('c', 2), ('d', 3), ('e', 4))
+
+val unzip = zip2.unzip 
+//unzip: (List[Char], List[Int]) = (List('a', 'b', 'c'), List(1, 2, 3))
+</code></pre>
+
+
+</section>
+<section>
+    <h2>toString</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val abcde = List('a', 'b', 'c', 'd', 'e') 
+val abcStr = abcde.toString 
+//abcStr: String = "List(a, b, c, d, e)"
+
+val list = List(1, 2, 3, 4, 5)
+val lstStr = list.toString 
+//lstStr: String = "List(1, 2, 3, 4, 5)"
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>mkSting</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val str1 = abcde.mkString ("[", ",", "]") 
+//str1: String = "[a,b,c,d,e]"
+
+val str2 = abcde.mkString ("", ",", "") 
+//str2: String = "a,b,c,d,e"
+
+val str3 = abcde.mkString (",") 
+//str3: String = "a,b,c,d,e"
+
+val str4 = abcde.mkString (",", "]") 
+//cmd37.sc:1: overloaded method value mkString with alternatives:
+//val str4 = abcde.mkString (",", "]")
+//                 ^
+//Compilation Failed
+</code></pre>
+
+
+</section>
+<section>
+    <h2>List. методы высшего порядка</h2>
+ 
+
+ 
+</section>
+<section>
+    <h2>map, foreach</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val abc = List(97 ,98, 99).map(_.toChar) 
+//abc: List[Char] = List('a', 'b', 'c')
+
+abc.foreach(println)
+//a
+//b
+//c
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>filter, partition</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val filter1 = List(1, 2, 3, 4, 5).filter(_ % 2 == 0) 
+//filter1: List[Int] = List(2, 4)
+
+val filter2 = List(1, 2, 3, 4, 5).filter(_ &lt; 0)  
+/filter2: List[Int] = List()
+
+val partition1 = List(1, 2, 3, 4, 5).partition(_ % 2 == 0) 
+//partition1: (List[Int], List[Int]) = (List(2, 4), List(1, 3, 5))
+
+val partition2 = List(1, 2, 3, 4, 5).partition(_ &lt; 0) 
+//partition2: (List[Int], List[Int]) = (List(), List(1, 2, 3, 4, 5))
+
+</code></pre>
+
+</section>
+<section>
+    <h2>find</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val find1 = List(1, 2, 3, 4, 5).find(_ % 2 == 0) 
+//find1: Option[Int] = Some(2)
+
+val find2 = List(1, 2, 3, 4, 5).find(_ <= 0) 
+//find2: Option[Int] = None
+</code></pre>
+
+</section>
+<section>
+    <h2>takeWhile, dropWhile</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val takeWhile1 = List(1, 2, 3, -4, 5).takeWhile(_ &gt; 0)  
+//takeWhile1: List[Int] = List(1, 2, 3)
+
+val dropWhile1 = List("banana", "pear", "apple", "orange")
+        .dropWhile(_.startsWith("b")) 
+//dropWhile2: List[String] = List("pear", "apple", "orange")
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>span</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val lst = List(1, 2, 3, -4, 5)
+val span1 = lst.span(_ &gt; 0) 
+//span1: (List[Int], List[Int]) = (List(1, 2, 3), List(-4, 5))
+
+val span2 = (lst.takeWhile(_ &gt; 0), lst.dropWhile(_ &gt; 0)  ) 
+//span2: (List[Int], List[Int]) = (List(1, 2, 3), List(-4, 5))
+</code></pre>
+
+</section>
+<section>
+    <h2>forall, exist, contains</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val forall1 = List(1, 2, 3).forall( _ &gt; 0) 
+//forall1: Boolean = true
+
+val forall2 = List(1, 2,-3).forall( _ &gt; 0) 
+//forall2: Boolean = false
+
+val exists1 = List(1, 2,-3).exists( _ &lt; 0) 
+//exists1: Boolean = true
+
+val exists2 = List(1, 2, 3).exists( _ &lt; 0) 
+//exists2: Boolean = false
+
+val contains1 = List(1, 2, 3).contains(3) 
+//contains1: Boolean = true
+
+val contains2 = List(1, 2, 3).contains(0) 
+//contains2: Boolean = false
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>foldLeft foldRight</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val num = List(1, 2, 3)
+val foldLeft1 = num.foldLeft(0)(_ + _) 
+//foldLeft1: Int = 6
+
+val foldLeft2 = num.foldLeft(-6)(_ + _) 
+//foldLeft2: Int = 0
+
+val foldRight1 = num.foldRight(0)(_ + _) 
+//foldRight1: Int = 6
+
+val foldRight2 = num.foldRight(-6)(_ + _) 
+//foldRight2: Int = 0
+</code></pre>
+
+
+</section>
+<section>
+    <h2>foldLeft fildRight. нагляднее</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val lst = List("a", "b", "c", "d")
+
+val foldLeft1 = lst.foldLeft("z")(_ + _)  
+//foldLeft1: String = "zabcd"
+//op(op(op(z, a), b), c) 
+
+val foldRight1 = lst.foldRight("z")(_ + _)  
+//foldRight1: String = "abcdz"
+//op(a, op(b, op(c, z)))
+
+val foldLeft2 = lst.tail.foldLeft(lst.head)(_ + " " + _) 
+//foldLeft2: String = "a b c d"
+
+val foldRight2 = lst.tail.foldRight(lst.head)(_ + " " + _) 
+//foldRight2: String = "b c d a"
+
+</code></pre>
+</section>
+
+<section>
+    <h2>reduceLeft reduceRight</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val num = List(1, 2, 3)
+val reduceLeft1 = lst.reduceLeft(_ + _) 
+//reduceLeft1: Int = 6
+
+val reduceLeft2 = num.reduceLeft(_ min _) 
+//reduceLeft2: Int = 1
+
+val reduceRight1 = num.reduceRight(_ + _) 
+//reduceRight1: Int = 6
+
+val reduceRight2 = num.reduceRight(_ max _) 
+//reduceRight2: Int = 3
+</code></pre>
+</section>
+<section>
+    <h2>reduce vs fold</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val emptyLst = List.empty[String]
+
+val foldLeftEmpty = emptyLst.foldLeft("i")(_ + _) 
+//foldLeftEmpty: String = "i"
+
+val reduceLeftEmpty = emptyLst.reduceLeft(_ + _)
+//java.lang.UnsupportedOperationException: empty.reduceLeft
+//  at scala.collection.IterableOnceOps.reduceLeft(IterableOnce.scala:721)
+//  at scala.collection.IterableOnceOps.reduceLeft$(IterableOnce.scala:718)
+//  at scala.collection.AbstractIterable.reduceLeft(Iterable.scala:921)
+//  ... 28 elided
+</code></pre>
+</section>
+
+
+<section>
+    <h2>sortWith</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val sort1 = List(10, 5, 8, 1, 7).sortWith(_ &gt; _) 
+//res22: List[Int] = List(10, 8, 7, 5, 1)
+
+val sort2 = List("banana", "pear", "apple", "orange")
+            .sortWith(_ &lt; _) 
+//sort2: List[String] = List("apple", "banana", 
+//                           "orange", "pear")
+
+val sort3 = List("banana", "pear", "apple", "orange")
+            .sortWith(_.length &lt; _.length) 
+//sort3: List[String] = List("pear", "apple", 
+//                           "banana", "orange")
+</code></pre>
+
+</section>
+<section>
+    <h2>sorted</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val a = List(10, 5, 8, 1, 7).sorted
+//sort4: List[Int] = List(1, 5, 7, 8, 10)
+</code></pre>
+
+</section>
+<section>
+    <h2>не всё умеет sorted*</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+case class Cat (name: String, age: Int)
+
+
+val s = List(Cat("Мурзик", 2), Cat("Murka", 1)).sorted
+//  error: No implicit Ordering defined for Cat.
+
+
+</code></pre>
+
+</section>
+<section>
+    <h2>не всё умеет sorted, решение</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+implicit class CatOrdered (cat: Cat) extends Ordered [Cat] {
+    val m1 = -1
+    def compare (that: Cat): Int = {
+        if (cat.name == that.name)
+            0
+        else if (cat.name &gt; that.name)
+            1
+        else 
+            m1 //ammonite ломается
+    }
+}
+</code></pre>
+
+</section>
+<section>
+    <h2>sorted по максимому</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+
+val s = List(Cat("Мурзик", 2), Cat("Murka", 1)).sorted
+//s: List[Cat] = List(Cat("Murka", 1), Cat("Мурзик", 2))
+
+
+</code></pre>
+
+</section>
+<section>
+    <h2>Чего же есть другого?</h2>
+
+
+</section>
+<section>
+    <h2>Array</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val arr1 = new Array[Int](5) 
+//arr1: Array[Int] = Array(0, 0, 0, 0, 0)
+
+val arr2 = Array(5, 4, 3, 2, 1) 
+//arr2: Array[Int] = Array(5, 4, 3, 2, 1)
+
+val arr3 = Array(5) 
+//arr3: Array[Int] = Array(5)
+
+</code></pre>
+
+</section>
+<section>
+    <h2>Set, Map</h2>
+    <ul>
+        <li>Set - множество уникальных значений</li>
+        <li>Map - множество уникальных отображений</li>
+    </ul>
+
+</section>
+<section>
+    <h2>Set</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val str = "Беги Лола, беги!" 
+//str: String = "Беги Лола, беги!"
+
+val split = str.toLowerCase.split("[ !,]+") 
+//split: Array[String] = Array("беги", "лола", "беги")
+
+var set = collection.mutable.Set.empty[String] 
+//set: collection.mutable.Set[String] = HashSet()
+
+for (word &lt;- split)
+    set += word 
+//set: collection.mutable.Set[String] = HashSet("беги", "лола")
+</code></pre>
+
+
+</section>
+<section>
+    <h2>Map</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val map1 = Map("one" -&gt; 1, "two" -&gt; 2) 
+//map1: Map[String, Int] = Map("one" -&gt; 1, "two" -&gt; 2)
+
+val map2 = Map("one" -&gt; 1, "two" -&gt; 3, "three" -&gt; 3, "two" -&gt; 2) 
+//map2: Map[String, Int] = Map("one" -&gt; 1, "two" -&gt; 2, "three" -&gt; 3)
+
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>TreeSet, TreeMap</h2>
+SortedSet
+<pre style="width:auto;"><code data-trim class="scala small">
+import scala.collection.immutable.TreeSet
+val tSet1 = TreeSet(9, 4, 5, 3, 2, 5, 8) 
+//tSet1: TreeSet[Int] = TreeSet(2, 3, 4, 5, 8, 9)
+
+val tSet2 = TreeSet('h', 'e', 'l', 'l', 'o') 
+//tSet2: TreeSet[Char] = TreeSet('e', 'h', 'l', 'o')
+</code></pre>
+
+
+SortedMap
+<pre style="width:auto;"><code data-trim class="scala small">
+import scala.collection.immutable.TreeMap
+var tMap = TreeMap(3 -&gt; 'c', 1 -&gt; 'b', 4 -&gt; 'a') 
+//tMap: TreeMap[Int, Char] = TreeMap(1 -&gt; 'b', 3 -&gt; 'c', 4 -&gt; 'a')
+</code></pre>
+</section>
+<section>
+    <h2>iterator</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+val it = Iterator("су", "е", "фа")
+while (it.hasNext)
+  println(it.next())
+//су
+//е
+//фа
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>mutable immutable</h2>
+    <ul>
+        <li>scala.collection
+        <ul><li>immutable</li>
+    <li>mutable</li>
+    <li>generic</li>
+    <li>concurrent</li>
+    </ul>
+    </li>
+    </ul>
+  
+<pre style="width:auto;"><code data-trim class="scala small">
+scala.collection.immutable.List   // Полное объявление
+scala.List                        // объявление через псевдоним
+List                              // тк scala._ всегда автоматически импортируется
+                                  // можно просто указать имя коллекции
+</code></pre>
+
+
+</section>
+<section> 
+<h2>Иерархия trait</h2>
+<center>
+<img src="img/lecture_6/collections-diagram.svg"/>
+</center>
+
+</section>
+<section>
+<h2>Иерархия immutable</h2>
+<center>
+<img src="img/lecture_6/collections-immutable-diagram.svg"/>
+</center>
+
+</section>
+<section>
+    <h2>Иерархия mutable</h2>
+
+<center>
+<img src="img/lecture_6/collections-mutable-diagram.svg"/>
+</center>
+
+</section>
+<section>
+    <h2>Равенство</h2>
+    <ul>
+        <li>Set</li>
+        <li>Map</li>
+        <li>Seq</li>
+    </ul>
+</section>
+<section>
+    <h2>Равенство</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+Set(1, 2, 3) != List(1, 2, 3)
+
+Set(1, 3, 2) == Set(1, 2, 3)
+
+</code></pre>
+</section>
+<section>
+    <h2>Равенство</h2>
+    <ul>
+        <li>mutable</li>
+        <li>immutable</li>
+        <li>НЕ-ВА-ЖНО</li>
+    </ul>
+</section>
+<section>
+    <h2>Равенство</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+List(1, 2, 3) == Vector(1, 2, 3)
+
+HashSet(1, 2) == TreeSet(2, 1)
+</code></pre>
+</section>
+
+<section>
+    <h2>Отображение. Методы</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+<ul>
+        <li>view</li>
+        <li>to <i>collection</i></li>
+    </ul>
+</code></pre>
+</section>
+<section>
+    <h2>Отображение.</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val v = Vector(1 to 10: _ * )
+//v: scala.collection.immutable.Vector[Int] =
+// Vector(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+val v2 = v.map(_ + 1).map(_ * 2)
+//v2: scala.collection.immutable.Vector[Int] =
+// Vector(4, 6, 8, 10, 12, 14, 16, 18, 20, 22)
+</code></pre>
+</section>
+<section>
+    <h2>Отображение  Ленивость</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+def lazyMap[T, U](coll: Iterable[T], f: T =&gt; U) =
+  new Iterable[U] {
+    def iterator = coll.iterator.map(f) 
+  }
+</code></pre>
+</section>
+<section>
+    <h2>Отображение. Делаем ленивым</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val vv = v.view
+//vv: scala.collection.IndexedSeqView[Int] = IndexedSeqView(&lt;not computed&gt;)
+val vv2 = vv.map(_ + 1)
+//vv2: scala.collection.IndexedSeqView[Int] = IndexedSeqView(&lt;not computed&gt;)
+val vv3 = vv2.map(_ * 2)
+//vv3: scala.collection.IndexedSeqView[Int] = IndexedSeqView(&lt;not computed&gt;)
+</code></pre>
+</section>
+<section>
+    <h2>Отобржение. Вычисляем.</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+val vv5 = vv3.to(Vector)
+//vv5: scala.collection.immutable.Vector[Int] = 
+// Vector(4, 6, 8, 10, 12, 14, 16, 18, 20, 22)
+
+val vv6 = vv3.to(List)
+//vv6: List[Int] = 
+// List(4, 6, 8, 10, 12, 14, 16, 18, 20, 22)
+</code></pre>
+</section>
+<section>
+    <h2>Performance. Seq. Immutable</h2>
+<pre style="width:auto;"><table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>head</th>
+      <th>tail</th>
+      <th>apply</th>
+      <th>update</th>
+      <th>prepend</th>
+      <th>append</th>
+      <th>insert</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="scala small">List</code></td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">LazyList</code></td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">ArraySeq</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">Vector</code></td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">Queue</code></td>
+      <td title="амортизированное константное время">aC</td>
+      <td title="амортизированное константное время">aC</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">Range</code></td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">String</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table></pre>
+</section>
+<section>
+    <h2>Performance. Seq. Mutable</h2>
+<pre style="width:auto;">
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>head</th>
+      <th>tail</th>
+      <th>apply</th>
+      <th>update</th>
+      <th>prepend</th>
+      <th>append</th>
+      <th>insert</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="scala small">ArrayBuffer</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="амортизированное константное время">aC</td>
+      <td title="линейное время">L</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">ListBuffer</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">StringBuilder</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="амортизированное константное время">aC</td>
+      <td title="линейное время">L</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">Queue</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">ArraySeq</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">Stack</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">Array</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">ArrayDeque</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="константное время">C</td>
+      <td title="константное время">C</td>
+      <td title="амортизированное константное время">aC</td>
+      <td title="амортизированное константное время">aC</td>
+      <td title="линейное время">L</td>
+    </tr>
+  </tbody>
+</table>
+</pre>
+</section>
+<section>
+    <h2>Performance. Set/Map. Immutable</h2>
+<pre style="width:auto;"><table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>lookup</th>
+      <th>add</th>
+      <th>remove</th>
+      <th>min</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="scala small">HashSet/HashMap</code></td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="линейное время">L</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">TreeSet/TreeMap</code></td>
+      <td title="логарифмическое время">Log</td>
+      <td title="логарифмическое время">Log</td>
+      <td title="логарифмическое время">Log</td>
+      <td title="логарифмическое время">Log</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">BitSet</code></td>
+      <td title="константное время">C</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей. Если биты плохо упакованы">eC<sup>*</sup></td>
+    </tr>
+    <tr>
+      <td><code class="scala small">VectorMap</code></td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="амортизированное константное время">aC</td>
+      <td title="линейное время">L</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">ListMap</code></td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+      <td title="линейное время">L</td>
+    </tr>
+  </tbody>
+</table></pre>
+</section>
+<section>
+    <h2>Performance. Set/Map. Mutable</h2>
+<pre style="width:auto;"><table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>lookup</th>
+      <th>add</th>
+      <th>remove</th>
+      <th>min</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="scala small">HashSet/HashMap</code></td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="линейное время">L</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">WeakHashMap</code></td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей">eC</td>
+      <td title="линейное время">L</td>
+    </tr>
+    <tr>
+      <td><code class="scala small">BitSet</code></td>
+      <td title="константное время">C</td>
+      <td title="амортизированное константное время">aC</td>
+      <td title="константное время">C</td>
+      <td title="константное время, но с погрешностью, к примеру, на распределение хеш-ключей. Если биты плохо упакованы">eC<sup>*</sup></td>
+    </tr>
+    <tr>
+      <td><code class="scala small">TreeSet</code></td>
+      <td title="логарифмическое время">Log</td>
+      <td title="логарифмическое время">Log</td>
+      <td title="логарифмическое время">Log</td>
+      <td title="логарифмическое время">Log</td>
+    </tr>
+  </tbody>
+</table></pre>
+</section>
+<section>
+    <h2>Scala &lt;=&gt; Java</h2>
+<pre style="width:auto;"><code data-trim class="scala small">
+import scala.jdk.CollectionConverters._ 
+// import collection.JavaConverters._ //2.12 и ниже 
+
+val j1 = java.util.Arrays.asList("hey", "lol")
+//j1: java.util.List[String] = [hey, lol]
+
+val j1s = j1.asScala
+//j1s: collection.mutable.Buffer[String] = Buffer("hey", "lol")
+
+val s1 = Seq("one", "dva")
+val s1j = s1.asJava
+//java.util.List[String] = SeqWrapper(List("one", "dva"))
+
+</code></pre>
+
+
+</section>
+<section>
+    <h2>Scala &lt;=&gt; Java</h2>
+<pre style="width:auto;"><code data-trim class="text">
+Iterator               &lt;=&gt;     java.util.Iterator
+Iterator               &lt;=&gt;     java.util.Enumeration
+Iterable               &lt;=&gt;     java.lang.Iterable
+Iterable               &lt;=&gt;     java.util.Collection
+mutable.Buffer         &lt;=&gt;     java.util.List
+mutable.Set            &lt;=&gt;     java.util.Set
+mutable.Map            &lt;=&gt;     java.util.Map
+mutable.ConcurrentMap  &lt;=&gt;     java.util.concurrent.ConcurrentMap
+</code></pre>
+
+
+</section>
+<section>
+    <h2>Scala =&gt; Java</h2>
+
+<pre style="width:auto;"><code data-trim class="text">
+Seq           =&gt;    java.util.List
+mutable.Seq   =&gt;    java.util.List
+Set           =&gt;    java.util.Set
+Map           =&gt;    java.util.Map
+</code></pre>
+
+</section>
+<section>
+    <h2>сортируем пузырьком</h2>
+
+<pre style="width:auto;"><code data-trim class="text">
+ ЦИКЛ ДЛЯ J=1 ДО N-1 ШАГ 1
+   F=0 
+   ЦИКЛ ДЛЯ I=1 ДО N-J-1 ШАГ 1 
+     ЕСЛИ A[I] &gt; A[I+1] ТО ОБМЕН A[I],A[I+1]:F=1
+   СЛЕДУЮЩЕЕ I  
+   ЕСЛИ F=0 ТО ВЫХОД ИЗ ЦИКЛА
+ СЛЕДУЮЩЕЕ J         
+</code></pre>
+
+</section>
+<section>
+    <h2>Scala в лоб</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+def bubblesort[A](arr: Array[A])(implicit ord: Ordering[A]): Array[A] = {
+  import ord._
+  for (j <- 1 to arr.length - 1) {
+    for (i <- 0 to (arr.length - 1 - j)) {
+      if (arr(i) &gt; arr(i + 1)) {
+        var t = arr(i)
+        arr(i) = arr(i + 1)
+        arr(i + 1) = t
+      }
+    }
+  }
+  arr
+}
+</code></pre>
+
+</section>
+<section>
+    <h2>Scala, когда не убъют</h2>
+
+<pre style="width:auto;"><code data-trim class="scala small">
+def bubblesort[A](list: List[A])(implicit ord: Ordering[A]): List[A] = {
+  import ord._
+  def sort(as: List[A], bs: List[A]): List[A] =
+    if (as.isEmpty) bs
+    else bubble(as, Nil, bs)
+
+  def bubble(as: List[A], zs: List[A], bs: List[A]): List[A] = as match {
+    case h1 :: h2 :: t =&gt;
+      if (h1 &gt; h2) bubble(h1 :: t, h2 :: zs, bs)
+      else bubble(h2 :: t, h1 :: zs, bs)
+    case h1 :: Nil =&gt; sort(zs, h1 :: bs)
+  }
+
+  sort(list, Nil)
+}
+</code></pre>
+</section>
+
+<section>
+    <h1>Конец</h2>
+    <p></p>
+    <p><a href ="https://docs.scala-lang.org/overviews/collections-2.13/introduction.html" target="_blank">scala collecctions</a></p>
+</section>
+        </div>
+
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: false,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                {
+                    src: 'lib/js/classList.js', condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/markdown/marked.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/markdown/markdown.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                        return !!document.querySelector('pre code');
+                    }, callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true }
+            ]
+        });
+
+        window.addEventListener("mousedown", handleClick, false);
+        window.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+
+        function handleClick(e) {
+            e.preventDefault();
+            if (e.button === 0) Reveal.next();
+            if (e.button === 2) Reveal.prev();
+        }
+    </script>
+
+</body>
+
+</html>
