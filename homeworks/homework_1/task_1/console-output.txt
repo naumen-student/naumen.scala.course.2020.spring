@@ -1,0 +1,28 @@
+Microsoft Windows [Version 6.1.7601]
+(c) Корпорация Майкрософт (Microsoft Corp.), 2009. Все права защищены.
+
+C:\Users\USER>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_181).
+Type in expressions for evaluation. Or try :help.
+
+scala> var body = "Scala! This is "
+body: String = "Scala! This is "
+
+scala> var name = "Ekaterina Guseva"
+name: String = Ekaterina Guseva
+
+scala> var greetings = List("Hello","Hola","Guten tag")
+greetings: List[String] = List(Hello, Hola, Guten tag)
+
+scala> greetings.foreach(hi=>println(hi+body+name)
+     | )
+HelloScala! This is Ekaterina Guseva
+HolaScala! This is Ekaterina Guseva
+Guten tagScala! This is Ekaterina Guseva
+
+scala> greetings.foreach(hi=>println(hi+body+name.reverse))
+HelloScala! This is avesuG aniretakE
+HolaScala! This is avesuG aniretakE
+Guten tagScala! This is avesuG aniretakE
+
+scala>
