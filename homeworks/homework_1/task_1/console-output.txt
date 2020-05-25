@@ -1,0 +1,40 @@
+matthew@inspirion3567:~/Projects/naumen-scala-2020/naumen.scala.course.2020.spring$ scala
+Welcome to Scala 2.13.1 (OpenJDK 64-Bit Server VM, Java 11.0.6).
+Type in expressions for evaluation. Or try :help.
+
+scala>
+
+scala> val a = 5
+a: Int = 5
+
+scala> val myName = "Matthew"
+myName: String = Matthew
+
+scala> "111223".reverse
+res1: String = 322111
+
+scala> val reverseFun: String => String = _.re
+reduce             reduceRight         replace               repr
+reduceLeft         reduceRightOption   replaceAll            reverse
+reduceLeftOption   regionMatches       replaceAllLiterally   reverseIterator
+reduceOption       repeat              replaceFirst          reverseMap
+
+scala> val reverseFun: String => String = _.reverse
+reverse   reverseIterator   reverseMap
+
+scala> val reverseFun: String => String = _.reverse
+reverseFun: String => String = $$Lambda$966/0x0000000100655040@429e7914
+
+scala> val f: String => String => Unit = greet => youName => println(s"$greet, this is $youName")
+f: String => (String => Unit) = $$Lambda$994/0x000000010066e040@6da646b8
+
+scala> f("Hello")("Matthew")
+Hello, this is Matthew
+
+scala> f("Hi")("Matvey")
+Hi, this is Matvey
+
+scala> f("oi")("Matthew")
+oi, this is Matthew
+
+scala>
