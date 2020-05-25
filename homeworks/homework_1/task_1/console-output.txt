@@ -1,0 +1,40 @@
+[frost@frost-pc Рабочий стол]$ amm
+Loading...
+Welcome to the Ammonite Repl 2.0.4 (Scala 2.13.1 Java 1.8.0_242)
+@ val myName = "Ivan Svirskiy" 
+myName: String = "Ivan Svirskiy"
+
+@ println(s"Hello,Scala! This is $myName") 
+Hello,Scala! This is Ivan Svirskiy
+
+
+@ val greetings = Array("Привет","Hola","Shalom","cześć","zdravo") 
+greetings: Array[String] = Array(
+  "\u041f\u0440\u0438\u0432\u0435\u0442",
+  "Hola",
+  "Shalom",
+  "cze\u015b\u0107",
+  "zdravo"
+)
+@ greetings.foreach(x=>println(s"$x Scala! This is $myName")) 
+Привет Scala! This is Ivan Svirskiy
+Hola Scala! This is Ivan Svirskiy
+Shalom Scala! This is Ivan Svirskiy
+cześć Scala! This is Ivan Svirskiy
+zdravo Scala! This is Ivan Svirskiy
+
+@ val reverseName = myName.reverse 
+reverseName: String = "yiksrivS navI"
+
+@ for(greeting<-greetings){
+  println(s"$greeting" Scala! This is $reverseName)
+  } 
+@ for(greeting<-greetings){
+  println(s"$greeting Scala! This is $reverseName")
+  } 
+Привет Scala! This is yiksrivS navI
+Hola Scala! This is yiksrivS navI
+Shalom Scala! This is yiksrivS navI
+cześć Scala! This is yiksrivS navI
+zdravo Scala! This is yiksrivS navI
+
