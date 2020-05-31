@@ -1,0 +1,57 @@
+Welcome to the Ammonite Repl 2.0.4 (Scala 2.13.1 Java 11.0.5)
+@ val name = "Maskim Zayakin"
+name: String = "Maskim Zayakin"
+
+@ var hello = f"Hello Scala! This is $name%s"
+hello: String = "Hello Scala! This is Maskim Zayakin"
+
+@ println(hello)
+Hello Scala! This is Maskim Zayakin
+
+
+@ hello = hello.replace("Hello", "Hola")
+
+
+@ println(hello)
+Hola Scala! This is Maskim Zayakin
+
+
+@ hello = hello.replace("Hola", "Guten tag")
+
+
+@ println(hello)
+Guten tag Scala! This is Maskim Zayakin
+
+
+@ reversed_name = name.reverse
+cmd7.sc:1: not found: value reversed_name
+val res7 = reversed_name = name.reverse
+           ^
+Compilation Failed
+
+@ val reversed_name = name.reverse
+reversed_name: String = "nikayaZ miksaM"
+
+@ hello = hello.replace(name, reversed_name)
+
+
+@ println(hello)
+Guten tag Scala! This is nikayaZ miksaM
+
+
+@ hello = hello.replace("Guten tag", "Hola")
+
+@ println(hello)
+Hola Scala! This is nikayaZ miksaM
+
+
+@ hello = hello.replace("Hola", "Hello")
+
+
+@ println(hello)
+Hello Scala! This is nikayaZ miksaM
+
+
+@
+
+

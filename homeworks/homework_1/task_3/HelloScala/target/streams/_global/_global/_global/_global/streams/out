@@ -1,0 +1,16 @@
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [helloscala / Compile / run] Found inputs: /home/rasetsu/IdeaProjects/HelloScala/*.{java,scala},/home/rasetsu/IdeaProjects/HelloScala/src/main/java/**/*.{java,scala},/home/rasetsu/IdeaProjects/HelloScala/src/main/resources/**/*,/home/rasetsu/IdeaProjects/HelloScala/src/main/scala/**/*.{java,scala},/home/rasetsu/IdeaProjects/HelloScala/src/main/scala-2.13/**/*.{java,scala}[0m
+[0m[[0m[0minfo[0m] [0m[0m1. Monitoring source files for helloscala/run...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mhelloscala / Compile / run - Accepted event for /home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mhelloscala / Compile / run - Accepted event for /home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating update event for modified /home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala (previous stamp: Hash(e1062861afd162bae6ef3d712f8cf12e84ff2055), current stamp: Hash(6a4bec436615c9ba021a25f09558bfa420891c98))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived file event actions: /home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala -> Trigger. Returning: (Update(/home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala, 2020-Mar-21 23:25:30.988 YEKT),Trigger)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuild triggered by /home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala. Running 'run'.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received file event Trigger for Update(/home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala, 2020-Mar-21 23:25:30.988 YEKT).[0m
+[0m[[0m[0minfo[0m] [0m[0m2. Monitoring source files for helloscala/run...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mDiscarding entry for recently updated path /home/rasetsu/IdeaProjects/HelloScala/src/main/scala/example/Main.scala. This event occurred 15 ms since the last event for this path.[0m
