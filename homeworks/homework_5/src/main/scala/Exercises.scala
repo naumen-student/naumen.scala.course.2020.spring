@@ -1,5 +1,5 @@
 object Exercises {
-  trait Animal {
+  sealed trait Animal {
     def name: String
   }
 
@@ -9,15 +9,25 @@ object Exercises {
 
 
 
-  case class Shelter ...
+  case class Shelter[A <: Animal](animals: List[A]) {
+    def +[B >: A <: Animal](animal: B): Shelter[B] = Shelter(animal :: animals)
+
+    def ++[B >: A <: Animal](shelter: Shelter[B]): Shelter[B] = Shelter(animals ::: shelter.animals)
+
+    def getNames: List[String] = animals.map(_.name)
+
+    def feed[B >: A <: Animal](food: Food[B]): List[String] = animals.map(food.feed(_))
+  }
 
 
 
-  trait Food ...
+   sealed trait Food[A <: Animal] {
+    def feed[B <: A](animal: B): String = s"${animal.name} eats ${this.toString.toLowerCase}"
+  }
 
-  case object Meat extends Food[Animal] ...
+  case object Meat extends Food[Animal]
 
-  case object Milk extends Food[Cat] ...
+  case object Milk extends Food[Cat]
 
-  case object Bread extends Food[Dog] ...
+  case object Bread extends Food[Dog]
 }
