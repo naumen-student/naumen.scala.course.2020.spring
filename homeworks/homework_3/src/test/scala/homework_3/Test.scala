@@ -20,7 +20,7 @@ object Test extends TestSuite{
             assert(Exercises.prettyBooleanFormatter3(123) == "123")
 
             assert(Exercises.max1(Seq(1,2,3)) == 3)
-            assert(Exercises.max1(Seq()) == 0)
+            assert(Exercises.max1(Seq()) == null.asInstanceOf[Int])
 
             assert(Exercises.max2(Seq(1,2,3)) == Seq(3))
             assert(Exercises.max2(Seq()) == Seq())

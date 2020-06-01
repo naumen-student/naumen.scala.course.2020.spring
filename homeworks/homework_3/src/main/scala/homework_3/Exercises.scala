@@ -35,18 +35,18 @@ object Exercises {
      * Обратите внимание на возвращаемые типы.
      */
     def max1(xs: Seq[Int]): Int =
-        if (xs == Seq())
-            0
+        if (xs.isEmpty)
+            null.asInstanceOf[Int]
     else xs.max
 
     def max2(xs: Seq[Int]): Seq[Int] =
-        if (xs == Seq())
+        if (xs.isEmpty)
             Seq()
     else Seq(xs.max)
 
     def max3(xs: Seq[Int]): Option[Int] =
-        if (xs == Seq())
-        None
+        if (xs.isEmpty)
+            None
     else Some(xs.max)
 
     /**
