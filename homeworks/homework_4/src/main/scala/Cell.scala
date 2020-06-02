@@ -15,11 +15,7 @@ class StringCell(string: String) extends  Cell {
 }
 
 class ReferenceCell(val ix: Int, val iy: Int, val table: Table) extends Cell {
-  override def toString: String = table.getCell(ix, iy) match {
-    case None => "outOfRange"
-    case Some(cell: ReferenceCell) => cell.refCyc()
-    case Some(cell) => cell.toString
-  }
+  override def toString: String = refCyc()
   def refCyc(cells: Seq[Cell] = Seq()): String = table.getCell(ix, iy) match {
     case None => "outOfRange"
     case Some(cell: ReferenceCell) => if (cells.contains(cell))
