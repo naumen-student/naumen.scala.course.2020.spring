@@ -17,10 +17,15 @@ class StringCell(string: String) extends  Cell {
 class ReferenceCell(val ix: Int, val iy: Int, val table: Table) extends Cell {
   override def toString: String = table.getCell(ix, iy) match {
     case None => "outOfRange"
-    case Some(cell: ReferenceCell) =>
-      try { cell.toString } catch {
-        case _: Throwable => "cyclic"
-      }
+    case Some(cell: ReferenceCell) => cell.refCyc()
+    case Some(cell) => cell.toString
+  }
+  def refCyc(cells: Seq[Cell] = Seq()): String = table.getCell(ix, iy) match {
+    case None => "outOfRange"
+    case Some(cell: ReferenceCell) => if (cells.contains(cell))
+      "cyclic"
+    else
+      cell.refCyc(cells :+ cell)
     case Some(cell) => cell.toString
   }
 }
