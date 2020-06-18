@@ -1,0 +1,13 @@
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [scalaexample / Compile / run] Found inputs: /Users/jellymary/edu/ScalaExample/*.{java,scala},/Users/jellymary/edu/ScalaExample/src/main/java/**/*.{java,scala},/Users/jellymary/edu/ScalaExample/src/main/resources/**/*,/Users/jellymary/edu/ScalaExample/src/main/scala/**/*.{java,scala},/Users/jellymary/edu/ScalaExample/src/main/scala-2.13/**/*.{java,scala}[0m
+[0m[[0m[0minfo[0m] [0m[0m1. Monitoring source files for scalaexample/run...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mscalaexample / Compile / run - Accepted event for /Users/jellymary/edu/ScalaExample/src/main/scala/example/Main.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/Users/jellymary/edu/ScalaExample/src/main/scala/example/Main.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /Users/jellymary/edu/ScalaExample/src/main/scala/example/Main.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /Users/jellymary/edu/ScalaExample/src/main/scala/example/Main.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating update event for modified /Users/jellymary/edu/ScalaExample/src/main/scala/example/Main.scala (previous stamp: Hash(563732971ef321f485f8ddaec08f90452a4e71c0), current stamp: Hash(1e332f54c8b35e84552be842ce736fc339798bca))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived file event actions: /Users/jellymary/edu/ScalaExample/src/main/scala/example/Main.scala -> Trigger. Returning: (Update(/Users/jellymary/edu/ScalaExample/src/main/scala/example/Main.scala, 2020-мар.-24 23:08:55.730 YEKT),Trigger)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuild triggered by /Users/jellymary/edu/ScalaExample/src/main/scala/example/Main.scala. Running 'run'.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received file event Trigger for Update(/Users/jellymary/edu/ScalaExample/src/main/scala/example/Main.scala, 2020-мар.-24 23:08:55.730 YEKT).[0m
+[0m[[0m[0minfo[0m] [0m[0m2. Monitoring source files for scalaexample/run...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
