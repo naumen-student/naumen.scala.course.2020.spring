@@ -1,0 +1,13 @@
+[debug] Packaging C:\Users\malyshev.v\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\HelloScala\target\scala-2.13\helloscala_2.13-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	helloScala
+[debug] 	  C:\Users\malyshev.v\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\HelloScala\target\scala-2.13\classes\helloScala
+[debug] 	helloScala\HelloScala.class
+[debug] 	  C:\Users\malyshev.v\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\HelloScala\target\scala-2.13\classes\helloScala\HelloScala.class
+[debug] 	helloScala\Main$.class
+[debug] 	  C:\Users\malyshev.v\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\HelloScala\target\scala-2.13\classes\helloScala\Main$.class
+[debug] 	helloScala\Main$delayedInit$body.class
+[debug] 	  C:\Users\malyshev.v\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\HelloScala\target\scala-2.13\classes\helloScala\Main$delayedInit$body.class
+[debug] 	helloScala\Main.class
+[debug] 	  C:\Users\malyshev.v\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\HelloScala\target\scala-2.13\classes\helloScala\Main.class
+[debug] Done packaging.
