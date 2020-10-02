@@ -1,0 +1,65 @@
+C:\Users\malyshev.v>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 11.0.8).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala!! This is Vlad")
+Hello Scala!! This is Vlad
+
+scala> def Hello(s: String): {println($"{s} Scala!! This is Vlad")}
+<console>:1: error: illegal start of declaration (possible cause: missing `=' in front of current method body)
+       def Hello(s: String): {println($"{s} Scala!! This is Vlad")}
+                              ^
+
+scala> def Hello(s: String): {println($"{s} Scala!! This is Vlad")}
+<console>:1: error: illegal start of declaration (possible cause: missing `=' in front of current method body)
+       def Hello(s: String): {println($"{s} Scala!! This is Vlad")}
+                              ^
+
+scala> def Hello(s: String) = {println($"{s} Scala!! This is Vlad")}
+<console>:11: error: value $ is not a member of StringContext
+       def Hello(s: String) = {println($"{s} Scala!! This is Vlad")}
+                                       ^
+
+scala> val hello = (s: String) => println($"{s} Scala!! This is Vlad")
+<console>:11: error: value $ is not a member of StringContext
+       val hello = (s: String) => println($"{s} Scala!! This is Vlad")
+                                          ^
+
+scala> val hello = (s: String) => println(s + " Scala!! This is Vlad")
+hello: String => Unit = $$Lambda$1116/0x00000001007a7840@43d3995f
+
+scala> hello("Aloha")
+Aloha Scala!! This is Vlad
+
+scala> hello("Privet")
+Privet Scala!! This is Vlad
+
+scala> hello("Salam")
+Salam Scala!! This is Vlad
+
+scala> tenet.reverse
+<console>:12: error: not found: value tenet
+       tenet.reverse
+       ^
+
+scala> "tenet".reverse
+res5: String = tenet
+
+scala> val helloName = (g: String, n: String) => println(s + " Scala!! This is " + n.reverse)
+<console>:11: error: not found: value s
+       val helloName = (g: String, n: String) => println(s + " Scala!! This is " + n.reverse)
+                                                         ^
+
+scala> val helloName = (g: String, n: String) => println(g + " Scala!! This is " + n.reverse)
+helloName: (String, String) => Unit = $$Lambda$1141/0x00000001007ba840@7c07023
+
+scala> val greetings = Array("Aloha", "Privet", "Salam")
+greetings: Array[String] = Array(Aloha, Privet, Salam)
+
+scala> val name = "Vlad Malyshev"
+name: String = Vlad Malyshev
+
+scala> greetings.foreach(g => helloName(g, name))
+Aloha Scala!! This is vehsylaM dalV
+Privet Scala!! This is vehsylaM dalV
+Salam Scala!! This is vehsylaM dalV
