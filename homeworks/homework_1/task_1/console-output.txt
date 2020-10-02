@@ -1,0 +1,30 @@
+denis ~/ amm
+Loading...
+Welcome to the Ammonite Repl 2.2.0 (Scala 2.13.3 Java 14.0.1)
+@ val name = "Denis Matafonov" 
+name: String = "Denis Matafonov"
+
+@ val hello = (name: String) => "Hello Scala! This is " + name 
+hello: String => String = ammonite.$sess.cmd7$$$Lambda$1379/0x00000008012be840@2abe9173
+
+@ val hello_denis = hello(name) 
+hello_denis: String = "Hello Scala! This is Denis Matafonov"
+
+@ print(hello_denis) 
+Hello Scala! This is Denis Matafonov
+
+@ val helloReplacer = (oldPattern: String, newPattern: String, hello: String) => hello.replaceAll(oldPattern, newPattern) 
+helloReplacer: (String, String, String) => String = ammonite.$sess.cmd10$$$Lambda$1640/0x0000000801304440@787e4357
+
+@ print("Esp: " + helloReplacer("Hello", "Hola", hello_denis)) 
+Esp: Hola Scala! This is Denis Matafonov
+
+@ print("Ger: " + helloReplacer("Hello", "Guten tag", hello_denis)) 
+Ger: Guten tag Scala! This is Denis Matafonov
+
+@ print("Reversed: " + helloReplacer(name, name.reverse, hello_denis)) 
+Reversed: Hello Scala! This is vonofataM sineD
+
+@  
+
+
