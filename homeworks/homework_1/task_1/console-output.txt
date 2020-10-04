@@ -1,0 +1,45 @@
+Microsoft Windows [Version 10.0.19041.508]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2020. Все права защищены.
+
+C:\Users\pniki>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) Client VM, Java 1.8.0_221).
+Type in expressions for evaluation. Or try :help.
+
+scala> val greet1 = "Hello, Scala! This is Nikita"
+greet1: String = Hello, Scala! This is Nikita
+
+scala> println(greet1)
+Hello, Scala! This is Nikita
+
+scala> def hello = println("Privet, Scala! This is Nikita")
+hello: Unit
+
+scala> hello
+Privet, Scala! This is Nikita
+
+scala> println("Isenmesez, Scala! This is Nikita")
+Isenmesez, Scala! This is Nikita
+
+scala> :paste
+// Entering paste mode (ctrl-D to finish)
+
+object HelloScala {
+def main(args: Array[String]) {
+println("Hello Scala! This is atikiN")
+println("Privet, Scala! This is atikiN")
+println("Isenmesez, Scala! This is atikiN")
+}
+}
+
+// Exiting paste mode, now interpreting.
+
+defined object HelloScala
+
+scala> HelloScala.main(null)
+Hello Scala! This is atikiN
+Privet, Scala! This is atikiN
+Isenmesez, Scala! This is atikiN
+
+scala> :q
+
+C:\Users\pniki>
