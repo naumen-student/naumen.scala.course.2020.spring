@@ -1,0 +1,29 @@
+(base) MacBook-Air-Polina:~ polina$ amm
+Loading...
+Compiling (synthetic)/ammonite/predef/interpBridge.sc
+Compiling (synthetic)/ammonite/predef/replBridge.sc
+Compiling (synthetic)/ammonite/predef/sourceBridge.sc
+Compiling (synthetic)/ammonite/predef/frontEndBridge.sc
+Compiling (synthetic)/ammonite/predef/DefaultPredef.sc
+Welcome to the Ammonite Repl 2.0.4 (Scala 2.13.1 Java 13.0.2)
+
+@ val greetings = List("Hello", "Hola", "Sup") 
+greetings: List[String] = List("Hello", "Hola", "Sup")
+
+
+@ val name = "Polina Galeeva" 
+name: String = "Polina Galeeva"
+
+
+@ greetings.foreach(greeting => println(s"$greeting Scala! This is $name")) 
+Hello Scala! This is Polina Galeeva
+Hola Scala! This is Polina Galeeva
+Sup Scala! This is Polina Galeeva
+
+
+@ 
+greetings.foreach(greeting => println(s"$greeting Scala! This is ${name.reverse}")) 
+Hello Scala! This is aveelaG aniloP
+Hola Scala! This is aveelaG aniloP
+Sup Scala! This is aveelaG aniloP
+
