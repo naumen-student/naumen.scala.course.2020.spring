@@ -1,0 +1,54 @@
+Microsoft Windows [Version 10.0.18362.1082]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2019. Все права защищены.
+
+C:\Users\shyba>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_45).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Vyacheslav Shubakov")
+Hello Scala! This is Vyacheslav Shubakov
+
+scala> val myString = "Guten tag Scala! This is Vyacheslav Shubakov"
+myString: String = Guten tag Scala! This is Vyacheslav Shubakov
+
+scala> println(myString)
+Guten tag Scala! This is Vyacheslav Shubakov
+
+scala> val hello = "Привет Scala"
+hello: String = ╧ЁштхЄ Scala
+
+scala> val helloInItalian = "Ciao Scala!"
+helloInItalian: String = Ciao Scala!
+
+scala> val myName = "Vyacheslav Shubakov"
+myName: String = Vyacheslav Shubakov
+
+scala> val concatString = helloInItalian + myName
+concatString: String = Ciao Scala!Vyacheslav Shubakov
+
+scala> println(helloInItalian + " This is " + myName + "!")
+Ciao Scala! This is Vyacheslav Shubakov!
+
+scala> def hello(s: String) : Unit = { println("Hello Scala! This is " + s)}
+hello: (s: String)Unit
+
+scala> val myInvertedName = "ValsehcayV vokabuhS"
+myInvertedName: String = ValsehcayV vokabuhS
+
+scala> hello(myInvertedName)
+Hello Scala! This is ValsehcayV vokabuhS
+
+scala> helloOnDeutsche(myInvertedName)
+Guten tag! This is ValsehcayV vokabuhS
+
+scala> val a = 100500
+a: Int = 100500
+
+scala> if (a==100500) println (helloOnDeutsche(myInvertedName))
+Guten tag! This is ValsehcayV vokabuhS
+()
+
+scala> try{ val a = 10/0} catch {case ex: ArithmeticException => println("Ciao Scala! This is " + myInvertedName)}
+Ciao Scala! This is ValsehcayV vokabuhS
+
+scala>       
