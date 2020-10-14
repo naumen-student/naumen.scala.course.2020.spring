@@ -1,0 +1,26 @@
+C:\Users\Дмитрий\.jdks\openjdk-15\bin\java.exe -Djline.terminal=NONE "-javaagent:D:\1Программные файлы\IntelliJ IDEA Community Edition 2020.2.3\lib\idea_rt.jar=53583:D:\1Программные файлы\IntelliJ IDEA Community Edition 2020.2.3\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Дмитрий\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.3.jar;C:\Users\Дмитрий\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.13.3.jar;C:\Users\Дмитрий\.ivy2\cache\org.scala-lang\scala-library\srcs\scala-library-2.13.3-sources.jar;C:\Users\Дмитрий\.ivy2\cache\org.scala-lang\scala-compiler\jars\scala-compiler-2.13.3.jar;C:\Users\Дмитрий\AppData\Roaming\JetBrains\IdeaIC2020.2\plugins\Scala\lib\runners.jar scala.tools.nsc.MainGenericRunner -usejavacp -Xjline:off
+Welcome to Scala 2.13.3 (OpenJDK 64-Bit Server VM, Java 15).
+Type in expressions for evaluation. Or try :help.
+
+scala> val mainSentense = "Scala! This is Dmitry Kovalenko"
+val mainSentense: String = Scala! This is Dmitry Kovalenko
+
+scala> println("Hello " + mainSentense)
+Hello Scala! This is Dmitry Kovalenko
+
+scala> println("Hola " + mainSentense)
+Hola Scala! This is Dmitry Kovalenko
+
+scala> println("Guten tag " + mainSentense)
+Guten tag Scala! This is Dmitry Kovalenko
+
+scala> println(("Hello " + mainSentense).reverse)
+oknelavoK yrtimD si sihT !alacS olleH
+
+scala> println(("Hola " + mainSentense).reverse)
+oknelavoK yrtimD si sihT !alacS aloH
+
+scala> println(("Guten tag " + mainSentense).reverse)
+oknelavoK yrtimD si sihT !alacS gat netuG
+
+scala>
