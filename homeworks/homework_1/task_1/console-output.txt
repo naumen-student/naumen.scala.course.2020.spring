@@ -1,0 +1,24 @@
+C:\>cd C:\Program Files\Java\jdk-15\bin
+
+C:\Program Files\Java\jdk-15\bin>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 15).
+Type in expressions for evaluation. Or try :help.
+
+scala> printl ("Hello Scala! This is Vlad.")
+<console>:12: error: not found: value printl
+       printl ("Hello Scala! This is Vlad.")
+       ^
+
+scala> print("Hello Scala! This is Vlad.")
+Hello Scala! This is Vlad.
+scala>
+
+scala>
+
+scala> print("Konnitiha Scala! This is Vlad.")
+Konnitiha Scala! This is Vlad.
+scala> print("Hello Scala! This is dalV.")
+Hello Scala! This is dalV.
+scala> print("Konnitiha Scala! This is dalV.")
+Konnitiha Scala! This is dalV.
+scala>
