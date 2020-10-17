@@ -1,0 +1,66 @@
+F:\Programming\Github\OOP\naumen.scala.course.2020.spring>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 11.0.8).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = "Hello Scala! This is Igor"
+a: String = Hello Scala! This is Igor
+
+scala> val Hellos = List("Привет","Hola")
+Hellos: List[String] = List(╧ЁштхЄ, Hola)
+
+scala> val Hellos = List("Privet", "Hola")
+Hellos: List[String] = List(Privet, Hola)
+
+scala> Hellos.map(x=> println(s"$x Scala! This is Igor")
+     |
+     |
+You typed two blank lines.  Starting a new command.
+
+scala>
+
+scala> Hellos.map(x=> println(s"$x Scala! This is Igor")
+     |
+     |
+You typed two blank lines.  Starting a new command.
+
+scala> println(a)
+Hello Scala! This is Igor
+
+scala> Hellos.map(x=> println(s"$x Scala! This is Igor")
+     | wtf
+     | wtf
+     | how to print it
+     |
+     |
+You typed two blank lines.  Starting a new command.
+
+scala> Hellos.map(x=> println(s"$x Scala! This is Igor"))
+Privet Scala! This is Igor
+Hola Scala! This is Igor
+res1: List[Unit] = List((), ())
+
+scala> val name = "Igor"
+name: String = Igor
+
+scala> Hellos.map(x=> println(s"$x Scala! This is name.reverse()"))
+Privet Scala! This is name.reverse()
+Hola Scala! This is name.reverse()
+res2: List[Unit] = List((), ())
+
+scala> Hellos.map(x=> println(s"$x Scala! This is {name.reverse()}"))
+Privet Scala! This is {name.reverse()}
+Hola Scala! This is {name.reverse()}
+res3: List[Unit] = List((), ())
+
+scala> Hellos.map(x=> println(s"$x Scala! This is ${name.reverse()}"))
+<console>:14: error: not enough arguments for method apply: (index: Int)Char in class StringOps.
+Unspecified value parameter index.
+       Hellos.map(x=> println(s"$x Scala! This is ${name.reverse()}"))
+                                                                ^
+
+scala> Hellos.map(x=> println(s"$x Scala! This is ${name.reverse}"))
+Privet Scala! This is rogI
+Hola Scala! This is rogI
+res5: List[Unit] = List((), ())
+
+scala>
