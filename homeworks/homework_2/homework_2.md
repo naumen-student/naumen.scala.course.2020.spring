@@ -7,3 +7,10 @@
 
 
 Для выполнения задания рекомендуется использовать <a href='https://github.com/naumen-student/naumen.scala.course.2019.autumn/tree/master/homeworks/homework_2'>шаблон sbt проекта</a>
+
+## Как запустить тесты?
+
+```
+cd naumen.scala.course.2020.spring/homeworks/homework_2
+sbt homework_2/test
+```
