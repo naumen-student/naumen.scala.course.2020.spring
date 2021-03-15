@@ -1,0 +1,45 @@
+[info] Starting scala interpreter...
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 1.8.0_242).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = 3
+a: Int = 3
+
+scala> val name = "anton"
+name: String = anton
+
+scala> "aaabbc".reverse
+res0: String = cbbaaa
+
+scala> val revF: String => String = _.reverse
+revF: String => String = $$Lambda$4726/127841074@6717a23c
+
+scala> val f: String => String => String = greet => name =>  println(s"$greet, this is $name")
+<console>:12: error: type mismatch;
+ found   : Unit
+ required: String
+       val f: String => String => String = greet => name =>  println(s"$greet, this is $name")
+                                                                    ^
+
+scala> val f: String => String => Unit = greet => name =>  println(s"$greet, this is $name")
+f: String => (String => Unit) = $$Lambda$4768/457466296@57eb51f1
+
+scala> f("Hello")("Anton")
+Hello, this is Anton
+
+scala> f("Hola")("Anton")
+Hola, this is Anton
+
+scala> f("GutenTag")("Anton")
+GutenTag, this is Anton
+
+scala> f("Hello")("Anton".reverse)
+Hello, this is notnA
+
+scala> f("Hola")("Anton".reverse)
+Hola, this is notnA
+
+scala> f("GutenTag")("Anton".reverse)
+GutenTag, this is notnA
+
+scala>
