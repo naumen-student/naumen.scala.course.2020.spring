@@ -1,0 +1,34 @@
+C:\Users\valer>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 13.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name = "Valera Vedernikov"
+name: String = Valera Vedernikov
+
+scala> val greet1 = "Hello"
+greet1: String = Hello
+
+scala> val greet2 = "Hola"
+greet2: String = Hola
+
+scala> val greet3 = "Guten tag"
+greet3: String = Guten tag
+
+scala> def printName(greet: String, name: String){print(greet + " Scala! This is " + name)}
+printName: (greet: String, name: String)Unit
+
+scala> printName(greet1, name)
+Hello Scala! This is Valera Vedernikov
+scala> printName(greet2, name)
+Hola Scala! This is Valera Vedernikov
+scala> printName(greet3, name)
+Guten tag Scala! This is Valera Vedernikov
+scala> printName(greet1, name.reverse)
+Hello Scala! This is vokinredeV arelaV
+scala> printName(greet2, name)
+Hola Scala! This is Valera Vedernikov
+scala> printName(greet2, name.reverse)
+Hola Scala! This is vokinredeV arelaV
+scala> printName(greet3, name.reverse)
+Guten tag Scala! This is vokinredeV arelaV
+scala>
