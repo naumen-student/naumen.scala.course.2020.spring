@@ -1,0 +1,28 @@
+[debug] 
+[debug] Initial source changes: 
+[debug] 	removed:Set()
+[debug] 	added: Set()
+[debug] 	modified: Set(C:\naumen_scala\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\src\main\scala\example\Main.scala)
+[debug] Invalidated products: Set(C:\naumen_scala\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\target\scala-2.12\classes\example\Main$.class, C:\naumen_scala\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\target\scala-2.12\classes\example\Main$delayedInit$body.class, C:\naumen_scala\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\target\scala-2.12\classes\example\Main.class)
+[debug] External API changes: API Changes: Set()
+[debug] Modified binary dependencies: Set(C:\Users\Данил\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.4\scala-library-2.12.4.jar, C:\Users\�����\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.4\scala-library-2.12.4.jar)
+[debug] Initial directly invalidated classes: Set(example.Main)
+[debug] 
+[debug] Sources indirectly invalidated by:
+[debug] 	product: Set(C:\naumen_scala\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\src\main\scala\example\Main.scala)
+[debug] 	binary dep: Set(C:\naumen_scala\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\src\main\scala\example\Main.scala)
+[debug] 	external source: Set()
+[debug] All sources are invalidated.
+[debug] Initial set of included nodes: example.Main
+[debug] Recompiling all sources: number of invalidated sources > 50.0% of all sources
+[info] Compiling 1 Scala source to C:\naumen_scala\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\target\scala-2.12\classes ...
+[debug] Getting org.scala-sbt:compiler-bridge_2.12:1.3.4:compile for Scala 2.12.4
+[debug] Getting org.scala-sbt:compiler-bridge_2.12:1.3.4:compile for Scala 2.12.4
+[debug] [zinc] Running cached compiler 8f5f1b3 for Scala compiler version 2.12.4
+[debug] [zinc] The Scala compiler is invoked with:
+[debug] 	-bootclasspath
+[debug] 	C:\Program Files\Java\jdk1.8.0_221\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_221\jre\classes;C:\Users\Данил\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.4\scala-library-2.12.4.jar
+[debug] 	-classpath
+[debug] 	C:\naumen_scala\naumen.scala.course.2020.spring\homeworks\homework_1\task_3\target\scala-2.12\classes
+[debug] Scala compilation took 8.2276762 s
+[info] Done compiling.
