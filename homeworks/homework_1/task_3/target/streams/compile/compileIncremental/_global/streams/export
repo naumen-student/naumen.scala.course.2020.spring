@@ -1,0 +1,1 @@
+scalac -bootclasspath C:\Users\я\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.7\scala-library-2.12.7.jar -classpath G:\scala_naumen_course\homework_1\target\scala-2.12\classes G:\scala_naumen_course\homework_1\src\main\scala\example\Main.scala

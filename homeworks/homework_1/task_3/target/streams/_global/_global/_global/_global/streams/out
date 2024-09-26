@@ -1,0 +1,5 @@
+[debug] [watch] [homework_1 / Compile / run] Found inputs: G:\scala_naumen_course\homework_1\*.{java,scala},G:\scala_naumen_course\homework_1\src\main\java\**\*.{java,scala},G:\scala_naumen_course\homework_1\src\main\resources\**\*,G:\scala_naumen_course\homework_1\src\main\scala\**\*.{java,scala},G:\scala_naumen_course\homework_1\src\main\scala-2.12\**\*.{java,scala}
+[info] 1. Monitoring source files for homework_1/run...
+[info]    Press <enter> to interrupt or '?' for more options.
+[debug] [watch] [debug] Received input event: Run().
+[debug] [watch] [debug] Received input event: Run().
