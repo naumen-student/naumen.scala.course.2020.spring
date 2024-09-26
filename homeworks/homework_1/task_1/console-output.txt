@@ -1,0 +1,46 @@
+Welcome to Scala 2.13.1 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_241).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name: String = "Mikhail Stepanov"
+name: String = Mikhail Stepanov
+
+scala> val englishGreeting = "Hello"
+englishGreeting: String = Hello
+
+scala> val phrase = " Scala! This is "
+phrase: String = " Scala! This is "
+
+scala> println(englishGreeting + phrase + name)
+Hello Scala! This is Mikhail Stepanov
+
+scala> var otherLangGreeting = "Salut"
+otherLangGreeting: String = Salut
+
+scala> val franceFullGreeting = otherLangGreeting + phrase + name
+franceFullGreeting: String = Salut Scala! This is Mikhail Stepanov
+
+scala> println(franceFullGreeting)
+Salut Scala! This is Mikhail Stepanov
+
+scala> otherLangGreeting = "Привет"
+mutated otherLangGreeting
+
+scala> println(otherLangGreeting + phrase + name)
+Привет Scala! This is Mikhail Stepanov
+
+scala> println((englishGreeting + phrase + name).reverse)
+vonapetS liahkiM si sihT !alacS olleH
+
+scala> val output = (str: String) => println(str.reverse)
+output: String => Unit = $$Lambda$867/934377784@54ba7b3f
+
+scala> output(franceFullGreeting)
+vonapetS liahkiM si sihT !alacS tulaS
+
+scala> def outputRus(): Unit = println((otherLangGreeting + phrase + name).reverse)
+outputRus: ()Unit
+
+scala> outputRus()
+vonapetS liahkiM si sihT !alacS тевирП
+
+scala>
