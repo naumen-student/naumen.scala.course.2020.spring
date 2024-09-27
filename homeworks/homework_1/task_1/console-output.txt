@@ -1,0 +1,47 @@
+C:\Users\USER>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_51).
+Type in expressions for evaluation. Or try :help.
+
+scala>  object HelloWorld {
+     |   def main(args: Array[String]): Unit = {
+     |    println("Hello Scala! This is Artemiy Manakov")
+     |  }
+     | }
+defined object HelloWorld
+
+scala> HelloWorld.main(Array())
+Hello Scala! This is Artemiy Manakov
+
+scala> object HelloWorld {
+     |  def main(args: Array[String]): Unit = {
+     |   println("Guten Tag Scala! This is Artemiy Manakov")
+     |  }
+     | }
+defined object HelloWorld
+
+scala>  HelloWorld.main(Array())
+Guten Tag Scala! This is Artemiy Manakov
+
+scala>  object HelloWorld {
+     |   def main(args: Array[String]): Unit = {
+     |    println("Hello Scala! This is vokanaM yimetrA")
+     |  }
+     | }
+defined object HelloWorld
+
+scala>  HelloWorld.main(Array())
+Hello Scala! This is vokanaM yimetrA
+
+scala> object HelloWorld {
+     |   def main(args: Array[String]): Unit = {
+     |     println("Guten Tag Scala! This is vokanaM yimetrA")
+     |  }
+     | }
+defined object HelloWorld
+
+scala>  HelloWorld.main(Array())
+Guten Tag Scala! This is vokanaM yimetrA
+
+scala> :q
+
+C:\Users\USER>
